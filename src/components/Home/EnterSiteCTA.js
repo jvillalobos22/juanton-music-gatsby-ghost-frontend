@@ -1,6 +1,6 @@
-import React from "react";
-// import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const CallToAction = styled.div`
     width: 100%;
@@ -37,7 +37,7 @@ const CallToAction = styled.div`
 // `;
 
 const EnterSiteButton = styled(({ children, ...rest }) => (
-    <a {...rest}>{children}</a>
+    <button {...rest}>{children}</button>
 ))`
     display: inline-flex;
     align-items: center;
@@ -51,6 +51,7 @@ const EnterSiteButton = styled(({ children, ...rest }) => (
     border: 1px solid #fff;
     color: #fff;
     margin-bottom: 2rem;
+    background: transparent;
 
     &:hover,
     &:focus,
@@ -72,13 +73,13 @@ const ResponsiveSouncloudPlayer = styled.div`
 `;
 
 // eslint-disable-next-line arrow-body-style
-const EnterSiteCTA = () => {
+const EnterSiteCTA = ({ onClick }) => {
     // const [isPlayerOpen, setIsPlayerOpen] = useState(false);
 
     // const openPlayer = () => setIsPlayerOpen(true);
     return (
         <CallToAction>
-            <EnterSiteButton href="#">Enter Site</EnterSiteButton>
+            <EnterSiteButton onClick={onClick}>Enter Site</EnterSiteButton>
             <ResponsiveSouncloudPlayer>
                 <p>New music out now on Late Night Munchies!</p>
                 <iframe
@@ -92,6 +93,14 @@ const EnterSiteCTA = () => {
             </ResponsiveSouncloudPlayer>
         </CallToAction>
     );
+};
+
+EnterSiteCTA.propTypes = {
+    onClick: PropTypes.func
+};
+
+EnterSiteCTA.defaultProps = {
+    onClick: undefined
 };
 
 export default EnterSiteCTA;

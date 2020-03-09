@@ -1,77 +1,65 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-// import SEO from "../components/seo";
-import HeroImage from "../images/juanton_nye_14_1920x1280.jpg";
-import juantonLogo from "../images/juanton_logo_cropped.png";
-import EnterSiteCTA from "../components/EnterSiteCTA";
+import { Layout, PostCard, Pagination } from '../components/common';
+import { MetaData } from '../components/common/meta';
 
-import "../styles/original.css";
-import "../styles/global.css";
+/**
+ * Main index page (home page)
+ *
+ * Loads all posts from Ghost and uses pagination to navigate through them.
+ * The number of posts that should appear per page can be setup
+ * in /utils/siteConfig.js under `postsPerPage`.
+ *
+ */
+const Index = ({ data, location, pageContext }) => {
+    const posts = data.allGhostPost.edges;
 
-const HomePageBackground = styled.div`
-    width: "100%";
-    height: 100vh;
-    background-image: url(${HeroImage});
-    position: relative;
-    z-index: 1;
-    color: #fff;
+    return (
+        <>
+            <MetaData location={location} />
+            <Layout isHome={true}>
+                <div className="container">
+                    <section className="post-feed">
+                        {posts.map(({ node }) => (
+                            // The tag below includes the markup for each post - components/common/PostCard.js
+                            <PostCard key={node.id} post={node} />
+                        ))}
+                    </section>
+                    <Pagination pageContext={pageContext} />
+                </div>
+            </Layout>
+        </>
+    );
+};
 
-    &:after {
-        content: "";
-        position: absolute;
-        z-index: 5;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        witdth: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
+Index.propTypes = {
+    data: PropTypes.shape({
+        allGhostPost: PropTypes.object.isRequired
+    }).isRequired,
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired
+    }).isRequired,
+    pageContext: PropTypes.object
+};
+
+export default Index;
+
+// This page query loads all posts sorted descending by published date
+// The `limit` and `skip` values are used for pagination
+export const pageQuery = graphql`
+    query GhostPostQuery($limit: Int!, $skip: Int!) {
+        allGhostPost(
+            sort: { order: DESC, fields: [published_at] }
+            limit: $limit
+            skip: $skip
+        ) {
+            edges {
+                node {
+                    ...GhostPostFields
+                }
+            }
+        }
     }
 `;
-
-const LayoutSC = styled.div`
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    height: 100vh;
-    max-width: 1400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0 16px;
-`;
-
-const CenteredContent = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    margin: 0 auto;
-`;
-
-const JuantonLogoCenter = styled.img`
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 1.5rem;
-`;
-
-const HomeSplashPage = () => (
-    <HomePageBackground>
-        <LayoutSC>
-            {/* <SEO title="Juanton Music | Home" /> */}
-            <CenteredContent>
-                <JuantonLogoCenter
-                    src={juantonLogo}
-                    alt="JV - Initials of Juan
-                  Villalobos"
-                />
-                <EnterSiteCTA />
-            </CenteredContent>
-        </LayoutSC>
-    </HomePageBackground>
-);
-
-export default HomeSplashPage;
