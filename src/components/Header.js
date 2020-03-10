@@ -7,7 +7,7 @@ import juantonLogo from '../images/juanton_logo_cropped.png';
 const Layout = styled.div`
   margin: 0 auto;
   width: 100%;
-  padding: 18px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
