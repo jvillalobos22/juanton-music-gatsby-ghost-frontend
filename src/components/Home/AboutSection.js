@@ -5,6 +5,7 @@ import PageWrapper from '../PageWrapper';
 import { Heading1, Heading2, Heading3, Body1 } from '../Library/Typography';
 import { ButtonOutline, LinkOutline } from '../Library/Buttons';
 import { ResponsiveSoundcloudPlayer } from '../Library/ResponsiveSoundcloudPlayer';
+import MailchimpSignupForm from '../Library/MailchimpSignupForm';
 
 const Layout = styled.div`
   position: relative;
@@ -46,31 +47,7 @@ const HeroHeading = styled.div`
 const SectionBody = styled.div`
   width: 40%;
   align-self: flex-end;
-  margin-bottom: 40px;
-`;
-
-const MailForm = styled.div`
-  width: 100%;
-  margin-top: 48px;
-`;
-
-const StyledInput = styled.input`
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid #fff;
-  height: 50px;
-  width: 100%;
-  padding: 3px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 24px;
-`;
-
-const SignUpButton = styled(ButtonOutline)`
-  margin-top: 16px;
+  margin-bottom: 64px;
 `;
 
 const SectionHeading = styled.div`
@@ -141,18 +118,7 @@ const AboutSection = ({ setSection }) => (
             </Heading3SC>
           </HeroHeading>
           <SectionBody>
-            <Body1>
-              Would you like a free Ableton rack I used while creating my most
-              recent track?
-            </Body1>
-            <Body1>Sign up for my email list below</Body1>
-            <MailForm>
-              <label for="name">Name</label>
-              <StyledInput type="text" name="name" />
-              <label for="name">Email</label>
-              <StyledInput type="email" name="email" />
-              <SignUpButton>Sign Up</SignUpButton>
-            </MailForm>
+            <MailchimpSignupForm />
           </SectionBody>
         </HeroSection>
         <SectionHeading>
