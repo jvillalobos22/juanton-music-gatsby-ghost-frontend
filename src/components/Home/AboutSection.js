@@ -7,6 +7,8 @@ import { ButtonOutline, LinkOutline } from '../Library/Buttons';
 import { ResponsiveSoundcloudPlayer } from '../Library/ResponsiveSoundcloudPlayer';
 import MailchimpSignupForm from '../Library/MailchimpSignupForm';
 
+import VideoPlayer from '../Library/VideoPlayer';
+
 const Layout = styled.div`
   position: relative;
   z-index: 10;
@@ -106,6 +108,13 @@ const Listing = styled(Body1)`
   }
 `;
 
+const VideoPlayerLayout = styled.div`
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 96px;
+`;
+
 const AboutSection = ({ setSection }) => (
   <Layout>
     <PageWrapper>
@@ -137,7 +146,7 @@ const AboutSection = ({ setSection }) => (
             <LinkOutline to="/music">More Music</LinkOutline>
           </CenteredButton>
         </ResponsiveSoundcloudPlayerSC>
-        <SectionHeading>
+        {/* <SectionHeading>
           <Heading2>2020 Shows</Heading2>
         </SectionHeading>
         <ShowsListing>
@@ -155,7 +164,13 @@ const AboutSection = ({ setSection }) => (
             <span>3/14</span>&nbsp;-&nbsp;Housekeeping&nbsp;-&nbsp;
             <b>Bergerac SF</b>
           </Listing>
-        </ShowsListing>
+        </ShowsListing> */}
+        <SectionHeading>
+          <Heading2>Juanton in the Media</Heading2>
+        </SectionHeading>
+        <VideoPlayerLayout>
+          <VideoPlayer videoId={'FrqkJLtjTlM'} />
+        </VideoPlayerLayout>
       </AboutLayout>
     </PageWrapper>
   </Layout>

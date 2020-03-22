@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import VideoPlayer from '../Library/VideoPlayer';
+import { Heading3 } from '../Library/Typography';
+import { ButtonOutline } from '../Library/Buttons';
+
 const CallToAction = styled.div`
   width: 100%;
   text-align: center;
@@ -15,42 +19,23 @@ const CallToAction = styled.div`
   }
 `;
 
-// const LinkToMusicButton = styled.button`
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 200px;
-//     height: 40px;
-//     font-size: 12px;
-//     text-transform: uppercase;
-//     font-weight: 300;
-//     letter-spacing: 3px;
-//     border: 1px solid #fff;
-//     color: #fff;
+const InlineButtons = styled.div`
+  display: block;
+`;
 
-//     &:hover,
-//     &:focus,
-//     &:active {
-//         background-color: #fff;
-//         color: #222;
-//     }
-// `;
-
-const EnterSiteButton = styled(({ children, ...rest }) => (
-  <button {...rest}>{children}</button>
-))`
-  display: inline-flex;
+const EnterSiteButton = styled(ButtonOutline)`
   align-items: center;
   justify-content: center;
   width: 200px;
   height: 40px;
   font-size: 12px;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 3px;
   border: 1px solid #fff;
   color: #fff;
   margin-bottom: 2rem;
+  margin-right: 24px;
   background: transparent;
 
   &:hover,
@@ -72,6 +57,12 @@ const ResponsiveSoundcloudPlayer = styled.div`
   }
 `;
 
+const Heading3SC = styled(Heading3)`
+  color: #fff;
+  width: 100%;
+  text-align: center;
+`;
+
 // eslint-disable-next-line arrow-body-style
 const EnterSiteCTA = ({ onClick }) => {
   // const [isPlayerOpen, setIsPlayerOpen] = useState(false);
@@ -79,8 +70,12 @@ const EnterSiteCTA = ({ onClick }) => {
   // const openPlayer = () => setIsPlayerOpen(true);
   return (
     <CallToAction>
-      <EnterSiteButton onClick={onClick}>Enter Site</EnterSiteButton>
-      <ResponsiveSoundcloudPlayer>
+      <Heading3SC>Check out my recent interview with VEM</Heading3SC>
+      <InlineButtons>
+        <EnterSiteButton onClick={onClick}>Enter Site</EnterSiteButton>
+        <VideoPlayer videoId={'FrqkJLtjTlM'} hidePlayerWhenClosed />
+      </InlineButtons>
+      {/* <ResponsiveSoundcloudPlayer>
         <p>New music out now on Late Night Munchies!</p>
         <iframe
           width="100%"
@@ -90,7 +85,7 @@ const EnterSiteCTA = ({ onClick }) => {
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/690362245&color=%230d0c0c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
         ></iframe>
-      </ResponsiveSoundcloudPlayer>
+      </ResponsiveSoundcloudPlayer> */}
     </CallToAction>
   );
 };
