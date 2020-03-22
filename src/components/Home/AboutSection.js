@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import PageWrapper from '../PageWrapper';
-import { Heading1, Heading2, Heading3, Body1 } from '../Library/Typography';
-import { ButtonOutline, LinkOutline } from '../Library/Buttons';
+import { Heading1, Heading2, Heading3 } from '../Library/Typography';
+import { LinkOutline } from '../Library/Buttons';
 import { ResponsiveSoundcloudPlayer } from '../Library/ResponsiveSoundcloudPlayer';
 import MailchimpSignupForm from '../Library/MailchimpSignupForm';
 
@@ -78,35 +78,35 @@ const CenteredButton = styled.div`
   margin: 80px 0 0 0;
 `;
 
-const ShowsListing = styled.div`
-  width: 100%;
-  max-with: 900px;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 96px;
-`;
+// const ShowsListing = styled.div`
+//   width: 100%;
+//   max-with: 900px;
+//   display: flex;
+//   margin: 0 auto;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   margin-bottom: 96px;
+// `;
 
-const Listing = styled(Body1)`
-  width: 100%;
-  max-with: 900px;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-weight: 300;
-  margin-bottom: 16px;
+// const Listing = styled(Body1)`
+//   width: 100%;
+//   max-with: 900px;
+//   display: flex;
+//   margin: 0 auto;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   font-weight: 300;
+//   margin-bottom: 16px;
 
-  span {
-    font-style: italic;
-    font-weight: 400;
-  }
+//   span {
+//     font-style: italic;
+//     font-weight: 400;
+//   }
 
-  b {
-    font-weight: 600;
-  }
-`;
+//   b {
+//     font-weight: 600;
+//   }
+// `;
 
 const VideoPlayerLayout = styled.div`
   width: 100%;
@@ -115,7 +115,7 @@ const VideoPlayerLayout = styled.div`
   padding-bottom: 96px;
 `;
 
-const AboutSection = ({ setSection }) => (
+const AboutSection = () => (
   <Layout>
     <PageWrapper>
       <AboutLayout>
@@ -138,7 +138,7 @@ const AboutSection = ({ setSection }) => (
             width="100%"
             height="450"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/936802876%3Fsecret_token%3Ds-89yBQ&color=%230d0c0c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
           ></iframe>
@@ -175,13 +175,5 @@ const AboutSection = ({ setSection }) => (
     </PageWrapper>
   </Layout>
 );
-
-AboutSection.propTypes = {
-  setSection: PropTypes.func
-};
-
-AboutSection.defaultProps = {
-  setSection: undefined
-};
 
 export default AboutSection;

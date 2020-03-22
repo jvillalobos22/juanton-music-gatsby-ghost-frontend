@@ -46,16 +46,16 @@ const EnterSiteButton = styled(ButtonOutline)`
   }
 `;
 
-const ResponsiveSoundcloudPlayer = styled.div`
-  width: 100%;
-  margin-top: 3rem;
-  p {
-    margin-bottom: 1.5rem;
-  }
-  iframe {
-    max-width: 700px;
-  }
-`;
+// const ResponsiveSoundcloudPlayer = styled.div`
+//   width: 100%;
+//   margin-top: 3rem;
+//   p {
+//     margin-bottom: 1.5rem;
+//   }
+//   iframe {
+//     max-width: 700px;
+//   }
+// `;
 
 const Heading3SC = styled(Heading3)`
   color: #fff;

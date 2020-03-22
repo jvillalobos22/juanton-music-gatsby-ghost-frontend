@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { findDOMNode } from 'react-dom';
 import { hot } from 'react-hot-loader';
@@ -7,8 +8,8 @@ import ReactPlayer from 'react-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { ButtonOutline } from './Buttons';
-import { Heading3 } from './Typography';
 
+// eslint-disable-next-line no-unused-vars
 const PlayerWrapper = styled(({ isVisible, hidePlayer, ...rest }) => (
   <div {...rest} />
 ))`
@@ -141,6 +142,7 @@ class VideoPlayer extends Component {
   };
 
   handleSeekMouseDown = e => {
+    console.log('e', e);
     this.setState({ seeking: true });
   };
 
@@ -172,15 +174,14 @@ class VideoPlayer extends Component {
   };
 
   handleClickFullscreen = () => {
+    // eslint-disable-next-line react/no-find-dom-node
     screenfull.request(findDOMNode(this.player));
     this.setState({ isVisible: true });
   };
 
-  renderLoadButton = (url, label) => {
-    return (
-      <ButtonOutlineSC onClick={() => this.load(url)}>{label}</ButtonOutlineSC>
-    );
-  };
+  renderLoadButton = (url, label) => (
+    <ButtonOutlineSC onClick={() => this.load(url)}>{label}</ButtonOutlineSC>
+  );
 
   ref = player => {
     this.player = player;
@@ -195,9 +196,9 @@ class VideoPlayer extends Component {
       volume,
       muted,
       loop,
-      played,
-      loaded,
-      duration,
+      // played,
+      // loaded,
+      // duration,
       playbackRate,
       pip,
       isVisible
@@ -357,5 +358,12 @@ class VideoPlayer extends Component {
     );
   }
 }
+
+VideoPlayer.propTypes = {
+  hidePlayerWhenClosed: PropTypes.bool
+};
+VideoPlayer.defaultProps = {
+  hidePlayerWhenClosed: false
+};
 
 export default hot(module)(VideoPlayer);

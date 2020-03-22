@@ -30,6 +30,8 @@ module.exports = {
     'valid-jsdoc': 'off',
     'require-jsdoc': 'off',
     'consistent-return': ['error'],
+    'implicit-arrow-linebreak': 'off',
+    'arrow-parens': 'off',
     'arrow-body-style': [
       'error',
       'as-needed',
@@ -37,7 +39,7 @@ module.exports = {
     ],
     'jsx-quotes': ['error', 'prefer-double'],
     semi: ['off'],
-    indent: ['warn', 2],
+    indent: ['off'],
     'object-curly-spacing': ['error', 'always'],
     'comma-dangle': ['off'],
     'react/prop-types': [

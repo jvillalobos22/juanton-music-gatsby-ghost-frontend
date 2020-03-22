@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import { Heading1, Heading2, Heading3, Body1 } from '../Library/Typography';
-import { ButtonOutline, LinkOutline } from '../Library/Buttons';
+import { Heading3, Body1 } from '../Library/Typography';
+import { ButtonOutline } from '../Library/Buttons';
 
 const StyledInput = styled.input`
   background: rgba(0, 0, 0, 0.3);
@@ -39,9 +39,10 @@ const MailchimpSignupForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    addToMailchimp(email)
+    addToMailchimp(email, { firstName })
+      // eslint-disable-next-line no-unused-vars
       .then(data => {
-        // alert(data.result);
+        console.log('addToMailchimp response: ', data);
         setFormCompleted(true);
       })
       .catch(error => {
@@ -66,9 +67,9 @@ const MailchimpSignupForm = () => {
       </Body1>
       <Body1>Sign up for my email list below</Body1>
       <form onSubmit={handleSubmit}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <StyledInput name="email" type="email" onChange={handleEmailChange} />
-        <label for="name">First Name</label>
+        <label htmlFor="name">First Name</label>
         <StyledInput type="text" name="name" onChange={handleNameChange} />
         <SignUpButton type="submit">Sign Up</SignUpButton>
       </form>
