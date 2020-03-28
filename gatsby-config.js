@@ -114,6 +114,18 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: [
+            'Josefin Sans:300,400,600,700,400i:cyrillic-ext,greek',
+            'Droid Sans',
+            'Droid Serif'
+          ]
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
         query: `

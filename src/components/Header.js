@@ -7,25 +7,28 @@ import juantonLogo from '../images/juanton_logo_cropped.png';
 const Layout = styled.div`
   margin: 0 auto;
   width: 100%;
-  padding: 24px;
+  padding: 0 24px;
+  margin: 24px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const HomeLogoButton = styled(Link)`
-  width: 140px;
+  height: 55px;
+  width: auto;
   display: block;
 
   img {
-    width: 100%;
+    height: 55px;
+    width: auto;
   }
 `;
 
 const StyledNav = styled.nav``;
 
 const NavItem = styled(Link)`
-  padding: 5px 12px;
+  padding: 9px 16px 6px 16px;
   margin-left: 24px;
   border: 1px solid transparent;
   font-size: 14px;
@@ -51,9 +54,9 @@ const Header = ({ className }) => (
       </HomeLogoButton>
       <StyledNav>
         <NavItem to="/">Bio</NavItem>
-        <NavItem to="/">Music</NavItem>
-        <NavItem to="/">Shows</NavItem>
-        <NavItem to="/">Media</NavItem>
+        <NavItem to="/music">Music</NavItem>
+        <NavItem to="/shows">Shows</NavItem>
+        <NavItem to="/media">Media</NavItem>
         <NavItem to="/blog/">Blog</NavItem>
         <NavItem to="/">Get in touch</NavItem>
       </StyledNav>

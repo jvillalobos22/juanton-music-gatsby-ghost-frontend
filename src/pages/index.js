@@ -1,37 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import GoogleFontLoader from 'react-google-font-loader';
+// import GoogleFontLoader from 'react-google-font-loader';
 
 // import SEO from "../components/seo";
-import HeroImage from '../images/juanton_nye_14_1920x1280.jpg';
+import { PageBackground } from '../components/Library/Layout';
+
 import juantonLogo from '../images/juanton_logo_cropped.png';
 import EnterSiteCTA from '../components/Home/EnterSiteCTA';
-import AboutSection from '../components/Home/AboutSection';
+import HomePage from '../components/Home/HomePage';
 
 import '../styles/original.css';
 import '../styles/global.css';
-
-const HomePageBackground = styled.div`
-  width: '100%';
-  min-height: 100vh;
-  background-image: url(${HeroImage});
-  background-attachment: fixed;
-  position: relative;
-  z-index: 1;
-  color: #fff;
-
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    witdth: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-`;
 
 const LayoutSC = styled.div`
   position: relative;
@@ -66,23 +45,13 @@ const HomeSplashPage = () => {
 
   return (
     <>
-      {typeof document !== 'undefined' && (
-        <GoogleFontLoader
-          fonts={[
-            {
-              font: 'Josefin Sans',
-              weights: [300, 400, 600, 700, '400i']
-            }
-          ]}
-          subsets={['cyrillic-ext', 'greek']}
-        />
-      )}
-      <HomePageBackground>
+      <PageBackground className="homebg">
         {/* <SEO title="Juanton Music | Home" /> */}
         {section === 'splash' ? (
           <LayoutSC>
             <CenteredContent>
               <JuantonLogoCenter
+                className="fade-in quick"
                 src={juantonLogo}
                 alt="JV - Initials of Juan
                   Villalobos"
@@ -91,9 +60,9 @@ const HomeSplashPage = () => {
             </CenteredContent>
           </LayoutSC>
         ) : (
-          <AboutSection setSection={setSection} />
+          <HomePage setSection={setSection} />
         )}
-      </HomePageBackground>
+      </PageBackground>
     </>
   );
 };

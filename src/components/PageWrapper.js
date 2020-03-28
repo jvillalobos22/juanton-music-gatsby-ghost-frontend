@@ -27,7 +27,7 @@ const PageContent = styled.div`
 `;
 
 const HeaderSC = styled(Header)`
-  position: absolute;
+  position: fixed;
   z-index: 20;
   top: 0;
   left: 0;
