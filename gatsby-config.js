@@ -119,8 +119,7 @@ module.exports = {
         google: {
           families: [
             'Josefin Sans:300,400,600,700,400i:cyrillic-ext,greek',
-            'Droid Sans',
-            'Droid Serif'
+            'Lato:300,400,600'
           ]
         }
       }

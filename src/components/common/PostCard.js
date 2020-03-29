@@ -1,34 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Tags } from '@tryghost/helpers-gatsby';
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
+import { Heading2, Body1 } from '../Library/Typography';
+
+const TagsContainer = styled.div`
+  && {
+    margin-top: -8px;
+    margin-bottom: 16px;
+    span {
+      background-color: #fff;
+      color: #222;
+      padding: 5px 12px 3px;
+      border-radius: 15px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+`;
+
+const PostImage = styled.div`
+  margin-bottom: 28px;
+`;
+
+const PostCardLink = styled(Link)`
+  margin-bottom: 36px;
+`;
 
 const PostCard = ({ post }) => {
   const url = `/blog/${post.slug}/`;
   const readingTime = readingTimeHelper(post);
 
   return (
-    <Link to={url} className="post-card">
+    <PostCardLink to={url} className="post-card">
       <header className="post-card-header">
         {post.feature_image && (
-          <div
+          <PostImage
             className="post-card-image"
             style={{
               backgroundImage: `url(${post.feature_image})`
             }}
-          ></div>
-        )}
-        {post.tags && (
-          <div className="post-card-tags">
-            {' '}
-            <Tags post={post} visibility="public" autolink={false} />
-          </div>
+          ></PostImage>
         )}
         {post.featured && <span>Featured</span>}
-        <h2 className="post-card-title">{post.title}</h2>
+        <Heading2>{post.title}</Heading2>
+        {post.tags && (
+          <TagsContainer>
+            <Tags post={post} visibility="public" autolink={false} />
+          </TagsContainer>
+        )}
       </header>
-      <section className="post-card-excerpt">{post.excerpt}</section>
+      <section>
+        <Body1>{post.excerpt}</Body1>
+      </section>
       <footer className="post-card-footer">
         <div className="post-card-footer-left">
           <div className="post-card-avatar">
@@ -52,7 +78,7 @@ const PostCard = ({ post }) => {
           <div>{readingTime}</div>
         </div>
       </footer>
-    </Link>
+    </PostCardLink>
   );
 };
 

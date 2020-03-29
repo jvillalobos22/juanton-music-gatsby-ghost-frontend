@@ -60,7 +60,7 @@ const HomeSplashPage = () => {
             </CenteredContent>
           </LayoutSC>
         ) : (
-          <HomePage setSection={setSection} />
+          <HomePage />
         )}
       </PageBackground>
     </>

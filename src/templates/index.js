@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import { Layout, PostCard, Pagination } from '../components/common';
+import { PostCard, Pagination } from '../components/common';
+import {
+  PageBackground,
+  FullHeightLayout,
+  SectionLayout
+} from '../components/Library/Layout';
+import { Heading1, Body1 } from '../components/Library/Typography';
+import PageWrapper from '../components/PageWrapper';
 import { MetaData } from '../components/common/meta';
+import HeroImage from '../images/juanton_nye_14_1920x1280.jpg';
 
 /**
  * Main index page (home page)
@@ -13,23 +22,107 @@ import { MetaData } from '../components/common/meta';
  * in /utils/siteConfig.js under `postsPerPage`.
  *
  */
+
+const PostsSection = styled.section`
+  padding: 96px 0;
+  display: grid;
+  justify-content: space-between;
+  grid-gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 980px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const HeroSection = styled.div`
+  width: 100%;
+  background: transparent;
+  padding-top: 104px;
+`;
+
+const HeroBg = styled.div`
+  width: 100%;
+  min-height: 600px;
+  background: transparent;
+  background-image: url(${HeroImage});
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    witdth: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+`;
+
+const HeroHeading = styled.div`
+  && {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    witdth: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    h1,
+    p {
+      display: block;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+    }
+  }
+`;
+
 const Index = ({ data, location, pageContext }) => {
   const posts = data.allGhostPost.edges;
 
   return (
     <>
       <MetaData location={location} />
-      <Layout isHome={true}>
-        <div className="container">
-          <section className="post-feed">
-            {posts.map(({ node }) => (
-              // The tag below includes the markup for each post - components/common/PostCard.js
-              <PostCard key={node.id} post={node} />
-            ))}
-          </section>
-          <Pagination pageContext={pageContext} />
-        </div>
-      </Layout>
+      <PageBackground className="homebg">
+        <FullHeightLayout>
+          <HeroSection>
+            <HeroBg>
+              <HeroHeading>
+                <div>
+                  <Heading1>Blog</Heading1>
+                  <Body1>A place to share my knowledge and experience</Body1>
+                </div>
+              </HeroHeading>
+            </HeroBg>
+          </HeroSection>
+          <PageWrapper>
+            <SectionLayout>
+              <PostsSection>
+                {posts.map(({ node }) => (
+                  // The tag below includes the markup for each post - components/common/PostCard.js
+                  <PostCard key={node.id} post={node} />
+                ))}
+              </PostsSection>
+            </SectionLayout>
+          </PageWrapper>
+        </FullHeightLayout>
+        <Pagination pageContext={pageContext} />
+      </PageBackground>
     </>
   );
 };

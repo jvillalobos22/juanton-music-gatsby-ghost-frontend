@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import React from 'react';
 import juantonLogo from '../images/juanton_logo_cropped.png';
 
+const HeaderSC = styled.header`
+  background: rgba(0, 0, 0, 0.3);
+`;
+
 const Layout = styled.div`
   margin: 0 auto;
   width: 100%;
@@ -43,7 +47,7 @@ const NavItem = styled(Link)`
 `;
 
 const Header = ({ className }) => (
-  <header className={className}>
+  <HeaderSC className={className}>
     <Layout>
       <HomeLogoButton to="/">
         <img
@@ -61,7 +65,7 @@ const Header = ({ className }) => (
         <NavItem to="/">Get in touch</NavItem>
       </StyledNav>
     </Layout>
-  </header>
+  </HeaderSC>
 );
 
 Header.propTypes = {

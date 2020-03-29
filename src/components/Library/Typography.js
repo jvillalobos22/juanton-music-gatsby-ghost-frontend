@@ -12,7 +12,7 @@ export const Heading2 = styled.h2`
   font-weight: 700;
   display: block;
   margin-bottom: 24px;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
 `;
 
 export const Heading3 = styled.h3`
@@ -23,8 +23,10 @@ export const Heading3 = styled.h3`
 `;
 
 export const Body1 = styled.p`
-  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
   font-weight: 400;
+  line-height: 1.6;
   display: block;
   margin-bottom: 16px;
 `;

@@ -47,3 +47,11 @@ export const SectionHeading = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const PageHeading = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
