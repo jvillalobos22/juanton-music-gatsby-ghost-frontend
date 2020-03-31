@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import 'github-markdown-css/github-markdown.css';
 
-import { Layout } from '../components/common';
+import {
+  PageBackground,
+  FullHeightLayout,
+  SectionLayout
+} from '../components/Library/Layout';
+
+import { Heading1 } from '../components/Library/Typography';
+import PageWrapper from '../components/PageWrapper';
 import { MetaData } from '../components/common/meta';
+import '../styles/global.css';
 
 /**
  * Single post view (/:slug)
@@ -12,6 +22,11 @@ import { MetaData } from '../components/common/meta';
  * This file renders a single post and loads all the content.
  *
  */
+
+const ArticleSC = styled.article`
+  padding-top: 5rem;
+`;
+
 const Post = ({ data, location }) => {
   const post = data.ghostPost;
 
@@ -21,26 +36,31 @@ const Post = ({ data, location }) => {
       <Helmet>
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
-      <Layout>
-        <div className="container">
-          <article className="content">
-            {post.feature_image ? (
-              <figure className="post-feature-image">
-                <img src={post.feature_image} alt={post.title} />
-              </figure>
-            ) : null}
-            <section className="post-full-content">
-              <h1 className="content-title">{post.title}</h1>
+      <PageBackground className="homebg">
+        <FullHeightLayout>
+          <PageWrapper>
+            <SectionLayout>
+              <ArticleSC className="content">
+                {post.feature_image ? (
+                  <figure className="post-feature-image">
+                    <img src={post.feature_image} alt={post.title} />
+                  </figure>
+                ) : null}
+                <section className="post-full-content">
+                  <Heading1>{post.title}</Heading1>
 
-              {/* The main post content */}
-              <section
-                className="content-body load-external-scripts"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-            </section>
-          </article>
-        </div>
-      </Layout>
+                  {/* The main post content */}
+                  <section
+                    className="content-body load-external-scripts"
+                    dangerouslySetInnerHTML={{ __html: post.html }}
+                  />
+                </section>
+              </ArticleSC>
+            </SectionLayout>
+          </PageWrapper>
+        </FullHeightLayout>
+        {/* <Pagination pageContext={pageContext} /> */}
+      </PageBackground>
     </>
   );
 };

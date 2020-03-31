@@ -2,13 +2,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 const PageContent = styled.div`
   position: relative;
   z-index: 10;
   width: 100%;
-  min-height: 100vh;
-  max-width: 1400px;
+  ${'' /* min-height: 100vh; */}
+  min-height: calc(100vh - 200px);
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 16px;
 
@@ -38,6 +40,7 @@ const PageWrapper = ({ children }) => (
   <>
     <HeaderSC />
     <PageContent>{children}</PageContent>
+    <Footer />
   </>
 );
 

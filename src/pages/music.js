@@ -21,7 +21,6 @@ const ResponsiveSoundcloudPlayerSC = styled(ResponsiveSoundcloudPlayer)`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 100px;
   }
 `;
 

@@ -10,7 +10,7 @@ export const PageBackground = styled.div`
   z-index: 1;
   color: #fff;
 
-  &:after {
+  ${'' /* &:after {
     content: '';
     position: absolute;
     z-index: 5;
@@ -20,7 +20,7 @@ export const PageBackground = styled.div`
     right: 0;
     witdth: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-  }
+  } */}
 `;
 
 export const FullHeightLayout = styled.div`
@@ -28,7 +28,8 @@ export const FullHeightLayout = styled.div`
   z-index: 10;
   width: 100%;
   background: transparent;
-  min-height: 100vh;
+  min-height: calc(100vh - 200px);
+  padding-top: 104px;
 `;
 
 export const SectionLayout = styled.div`
@@ -36,11 +37,12 @@ export const SectionLayout = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  min-height: 100vh;
+  ${'' /* min-height: 100vh; */}
+  min-height: calc(100vh - 236px);
+  padding-top: 36px;
 `;
 
 export const SectionHeading = styled.div`
-  margin-top: 96px;
   width: 100%;
   height: 100px;
   display: flex;

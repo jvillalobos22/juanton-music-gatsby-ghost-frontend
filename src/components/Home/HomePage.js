@@ -11,7 +11,7 @@ const HeroSection = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 100vh;
+  height: calc(100vh - 236px);
 `;
 
 const Heading1SC = styled(Heading1)`

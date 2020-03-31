@@ -18,7 +18,6 @@ const VideoPlayerLayout = styled.div`
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding-bottom: 96px;
 `;
 
 const MediaPage = () => (

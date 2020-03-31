@@ -13,6 +13,7 @@ import { Heading1, Body1 } from '../components/Library/Typography';
 import PageWrapper from '../components/PageWrapper';
 import { MetaData } from '../components/common/meta';
 import HeroImage from '../images/juanton_nye_14_1920x1280.jpg';
+import '../styles/global.css';
 
 /**
  * Main index page (home page)
@@ -41,7 +42,7 @@ const PostsSection = styled.section`
 const HeroSection = styled.div`
   width: 100%;
   background: transparent;
-  padding-top: 104px;
+  ${'' /* padding-top: 104px; */}
 `;
 
 const HeroBg = styled.div`

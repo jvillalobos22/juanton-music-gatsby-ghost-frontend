@@ -145,7 +145,7 @@ body {
 }
 
 .homebg {
-  background-color: #222;
+  background-color: #111;
 }
 
 a {
@@ -154,7 +154,7 @@ a {
 }
 
 p {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.4;
 }
@@ -237,7 +237,7 @@ header.logo img {
 }
 
 header {
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   width: 100%;
 }
 
