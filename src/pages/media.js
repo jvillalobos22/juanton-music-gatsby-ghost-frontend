@@ -11,7 +11,7 @@ import PageWrapper from '../components/PageWrapper';
 import { Heading2 } from '../components/Library/Typography';
 import VideoPlayer from '../components/Library/VideoPlayer';
 
-import '../styles/original.css';
+// import '../styles/original.css';
 import '../styles/global.css';
 
 const VideoPlayerLayout = styled.div`

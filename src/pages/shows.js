@@ -10,7 +10,7 @@ import {
 import PageWrapper from '../components/PageWrapper';
 import { Body1, Heading2 } from '../components/Library/Typography';
 
-import '../styles/original.css';
+// import '../styles/original.css';
 import '../styles/global.css';
 
 const ShowsListing = styled.div`

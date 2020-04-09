@@ -9,7 +9,7 @@ import juantonLogo from '../images/juanton_logo_cropped.png';
 import EnterSiteCTA from '../components/Home/EnterSiteCTA';
 import HomePage from '../components/Home/HomePage';
 
-import '../styles/original.css';
+// import '../styles/original.css';
 import '../styles/global.css';
 
 const LayoutSC = styled.div`

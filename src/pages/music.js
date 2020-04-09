@@ -12,7 +12,7 @@ import { Heading2 } from '../components/Library/Typography';
 import { LinkOutline } from '../components/Library/Buttons';
 import { ResponsiveSoundcloudPlayer } from '../components/Library/ResponsiveSoundcloudPlayer';
 
-import '../styles/original.css';
+// import '../styles/original.css';
 import '../styles/global.css';
 
 const ResponsiveSoundcloudPlayerSC = styled(ResponsiveSoundcloudPlayer)`

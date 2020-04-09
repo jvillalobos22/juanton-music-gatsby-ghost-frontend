@@ -24,7 +24,13 @@ import '../styles/global.css';
  */
 
 const ArticleSC = styled.article`
-  padding-top: 5rem;
+  ${'' /* padding-top: 5rem; */}
+`;
+
+const SectionLayoutSC = styled(SectionLayout)`
+  && {
+    padding-top: 0;
+  }
 `;
 
 const Post = ({ data, location }) => {
@@ -39,7 +45,7 @@ const Post = ({ data, location }) => {
       <PageBackground className="homebg">
         <FullHeightLayout>
           <PageWrapper>
-            <SectionLayout>
+            <SectionLayoutSC>
               <ArticleSC className="content">
                 {post.feature_image ? (
                   <figure className="post-feature-image">
@@ -56,7 +62,7 @@ const Post = ({ data, location }) => {
                   />
                 </section>
               </ArticleSC>
-            </SectionLayout>
+            </SectionLayoutSC>
           </PageWrapper>
         </FullHeightLayout>
         {/* <Pagination pageContext={pageContext} /> */}

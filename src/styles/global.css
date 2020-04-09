@@ -136,13 +136,42 @@ table {
 /****************************************************
 * custom styles 
 ****************************************************/
+body {
+  /* background: #d32f2f; */
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.homebg {
+  background-color: #111;
+}
 
 body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 a:hover {
   text-decoration: none;
+}
+
+p,
+a,
+span,
+div,
+ul,
+ol,
+blockquote,
+q {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 600;
 }
 
 /****************************************************
@@ -230,7 +259,8 @@ a:hover {
 }
 
 .post-full-content {
-  max-width: 920px;
+  max-width: 1268px;
+  padding: 0 174px 6vw;
   margin: 0 auto;
 }
 
@@ -255,6 +285,19 @@ a:hover {
   font-size: 4rem;
   font-weight: 300;
 }
+
+.content-body p a {
+  color: #d32f2f;
+  font-weight: 400;
+}
+
+.content-body p a:hover,
+.content-body p a:focus,
+.content-body p a:active {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
 @media (max-width: 500px) {
   .content-body h1 {
     font-size: 2.8rem;
@@ -328,6 +371,12 @@ a:hover {
   font-weight: 700;
 }
 
+.content-body p,
+ul,
+ol {
+  font-weight: 400;
+  margin: 0.5em 0 0.75em;
+}
 .content-body figure {
   margin: 0.4em 0 1.6em;
   font-size: 1.75em;
@@ -336,13 +385,47 @@ a:hover {
 
 .content-body pre {
   margin: 0.4em 0 1.8em;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  font-family: monospace;
   line-height: 1.125em;
   white-space: pre-wrap;
   padding: 20px;
   background: var(--color-base);
   color: #fff;
-  border-radius: 12px;
+  border-radius: 4px;
+}
+
+.content-body code {
+  margin: 0 2px;
+  padding: 1px 4px 3px;
+  font-size: 1rem;
+  font-family: monospace;
+  line-height: 1.125em;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  background: #3e3e3e;
+  vertical-align: 1px;
+}
+
+.content-body pre code {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: 0;
+  vertical-align: unset;
+}
+
+.content-body blockquote {
+  font-size: 1.25rem;
+  font-weight: 300;
+  border-left: 3px solid #d32f2f;
+  margin: 1rem 0 1.5rem;
+  padding: 1.25rem 0.75rem;
+}
+
+.content-body blockquote a {
+  color: #d32f2f;
+  font-size: 1.25rem;
 }
 
 .content ol {
@@ -350,5 +433,289 @@ a:hover {
   margin-left: 18px;
   font-size: 18px;
   font-family: 'Lato', sans-serif;
+}
+
+.content ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin-left: 18px;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* 
+ * kg bookmark styles
+*/
+/* Koenig Styles
+/* ---------------------------------------------------------- */
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-full-content .kg-image {
+  max-width: 100%;
+}
+
+.post-full-content .kg-width-full.kg-image-card .kg-image {
+  max-width: 100%;
+}
+
+/* Preventing full-width image overlap with post image.  */
+.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
+  width: 100%;
+}
+
+.post-full-content .kg-width-wide .kg-image {
+  max-width: 1268px;
+}
+
+.post-full-content .kg-width-full .kg-image {
+  max-width: 100vw;
+}
+
+.post-full-content figure {
+  margin: 0.8em 0 2.3em;
+}
+
+.post-full-content h1 + figure,
+.post-full-content h2 + figure,
+.post-full-content h3 + figure,
+.post-full-content h4 + figure {
+  margin-top: 2em;
+}
+
+.post-full-content figure img {
+  margin: 0;
+}
+
+.post-full-content figcaption {
+  margin: 1em 0 0;
+  color: color(var(--midgrey) l(-10%));
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
+  text-align: center;
+}
+
+.kg-width-full figcaption {
+  padding: 0 1.5em;
+}
+
+.kg-embed-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.kg-embed-card .fluid-width-video-wrapper {
+  margin: 0;
+}
+
+@media (max-width: 1040px) {
+  .post-full-content .kg-width-full .kg-image {
+    width: 100vw;
+  }
+}
+
+.kg-bookmark-card {
+  width: 100%;
+  margin: 1.25rem 0;
+}
+
+.kg-bookmark-container {
+  display: flex;
+  min-height: 148px;
+  color: var(--color-base);
+  font-family: 'Lato', var(--font-sans-serif);
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px -1px rgba(255, 255, 255, 0.15),
+    0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.kg-bookmark-container:hover {
+  color: var(--color-base);
+  text-decoration: none;
+  box-shadow: 0 2px 5px -1px rgba(255, 255, 255, 0.15),
+    0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.kg-bookmark-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.kg-bookmark-title {
+  color: color(var(--color-secondary) l(-30%));
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+.kg-bookmark-container:hover .kg-bookmark-title {
+  color: var(--color-primary);
+}
+
+.kg-bookmark-description {
+  display: -webkit-box;
+  overflow-y: hidden;
+  margin-top: 12px;
+  max-height: 48px;
+  color: color(var(--color-secondary) l(-10%));
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: 400;
+
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.kg-bookmark-thumbnail {
+  position: relative;
+  min-width: 33%;
+  max-height: 100%;
+}
+
+.kg-bookmark-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+
+  object-fit: cover;
+}
+
+.kg-bookmark-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 14px;
+  color: color(var(--color-secondary) l(-10%));
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.kg-bookmark-icon {
+  margin-right: 8px;
+  width: 22px;
+  height: 22px;
+}
+
+.kg-bookmark-author {
+  line-height: 1.5em;
+}
+
+.kg-bookmark-author:after {
+  content: '•';
+  margin: 0 6px;
+}
+
+.kg-bookmark-publisher {
+  overflow: hidden;
+  max-width: 240px;
+  font-size: 0.9375rem;
+  line-height: 1.5em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kg-bookmark-card figcaption {
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 1040px) {
+  .post-full-content .kg-width-full .kg-image {
+    width: 100vw;
+  }
+}
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1040px;
+  width: 100%;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
+}
+
+.kg-gallery-card + .kg-image-card.kg-width-wide,
+.kg-gallery-card + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+  margin: -2.25em 0 3em;
+}
+
+@media (max-width: 500px) {
+  .post-full-content .kg-width-wide,
+  .post-full-content .kg-width-full {
+    margin-right: -5vw;
+    margin-left: -5vw;
+  }
+
+  .post-full-content figcaption {
+    margin-bottom: 0.4em;
+  }
+
+  .post-full-content .kg-bookmark-container {
+    flex-direction: column;
+  }
+
+  .kg-bookmark-title,
+  .kg-bookmark-description,
+  .kg-bookmark-metadata {
+    font-size: 1.4rem;
+    line-height: 1.5em;
+  }
+
+  .post-full-content .kg-bookmark-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .kg-bookmark-thumbnail {
+    order: 1;
+    min-height: 160px;
+    width: 100%;
+  }
+
+  .kg-bookmark-thumbnail img {
+    border-radius: 3px 3px 0 0;
+  }
+
+  .kg-bookmark-content {
+    order: 2;
+  }
 }
