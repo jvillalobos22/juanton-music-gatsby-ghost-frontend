@@ -99,7 +99,7 @@ const Index = ({ data, location, pageContext }) => {
   return (
     <>
       <MetaData location={location} />
-      <PageBackground className="homebg">
+      <PageBackground className="pagebg">
         <FullHeightLayout>
           <HeroSection>
             <HeroBg>

@@ -1,26 +1,34 @@
 import styled from 'styled-components';
 // import HeroImage from '../images/juanton_nye_14_1920x1280.jpg';
+// import HomeBgImage from '../../images/juanton_nye_14_1920x1280.jpg';
+import HomeBgImage from '../../images/juanton_nnmf_2019.jpg';
 
 export const PageBackground = styled.div`
   width: '100%';
   min-height: 100vh;
-  ${'' /* background-image: url(${HeroImage}); */}
+
   background-attachment: fixed;
   position: relative;
   z-index: 1;
   color: #fff;
 
-  ${'' /* &:after {
-    content: '';
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    witdth: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-  } */}
+  &.homebg {
+    background-image: url(${HomeBgImage});
+    background-position: top;
+    background-size: cover;
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      witdth: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
 `;
 
 export const FullHeightLayout = styled.div`

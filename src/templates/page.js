@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import 'github-markdown-css/github-markdown.css';
 
-import { Layout } from '../components/common';
+import {
+  PageBackground,
+  FullHeightLayout,
+  SectionLayout
+} from '../components/Library/Layout';
+
+import PageWrapper from '../components/PageWrapper';
 import { MetaData } from '../components/common/meta';
+import '../styles/global.css';
 
 /**
  * Single page (/:slug)
@@ -12,6 +21,25 @@ import { MetaData } from '../components/common/meta';
  * This file renders a single page and loads all the content.
  *
  */
+
+const ArticleSC = styled.article`
+  h1 {
+    margin-top: 0;
+    line-height: 1.4;
+  }
+`;
+
+const SectionLayoutSC = styled(SectionLayout)`
+  && {
+    padding-top: 0;
+  }
+`;
+
+const Spacer = styled.div`
+  width: 100%;
+  height: 100px;
+`;
+
 const Page = ({ data, location }) => {
   const page = data.ghostPage;
 
@@ -21,19 +49,33 @@ const Page = ({ data, location }) => {
       <Helmet>
         <style type="text/css">{`${page.codeinjection_styles}`}</style>
       </Helmet>
-      <Layout>
-        <div className="container">
-          <article className="content">
-            <h1 className="content-title">{page.title}</h1>
+      <PageBackground className="pagebg">
+        <FullHeightLayout>
+          <PageWrapper>
+            <SectionLayoutSC>
+              <ArticleSC className="content">
+                {page.feature_image ? (
+                  <figure className="post-feature-image">
+                    <img src={page.feature_image} alt={page.title} />
+                  </figure>
+                ) : (
+                  <Spacer />
+                )}
+                <section className="post-full-content">
+                  {/* <Heading1>{page.title}</Heading1> */}
 
-            {/* The main page content */}
-            <section
-              className="content-body load-external-scripts"
-              dangerouslySetInnerHTML={{ __html: page.html }}
-            />
-          </article>
-        </div>
-      </Layout>
+                  {/* The main post content */}
+                  <section
+                    className="content-body load-external-scripts"
+                    dangerouslySetInnerHTML={{ __html: page.html }}
+                  />
+                </section>
+              </ArticleSC>
+            </SectionLayoutSC>
+          </PageWrapper>
+        </FullHeightLayout>
+        {/* <Pagination pageContext={pageContext} /> */}
+      </PageBackground>
     </>
   );
 };

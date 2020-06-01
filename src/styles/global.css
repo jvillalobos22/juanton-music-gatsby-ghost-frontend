@@ -141,7 +141,7 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.homebg {
+.pagebg {
   background-color: #111;
 }
 
@@ -284,6 +284,7 @@ strong {
   margin: 1em 0 0.5em 0;
   font-size: 4rem;
   font-weight: 300;
+  line-height: 1.4;
 }
 
 .content-body p a {

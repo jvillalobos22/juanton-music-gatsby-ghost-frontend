@@ -57,7 +57,7 @@ const Header = ({ className }) => (
         />
       </HomeLogoButton>
       <StyledNav>
-        <NavItem to="/">Bio</NavItem>
+        <NavItem to="/bio">Bio</NavItem>
         <NavItem to="/music">Music</NavItem>
         <NavItem to="/shows">Shows</NavItem>
         <NavItem to="/media">Media</NavItem>

@@ -37,7 +37,7 @@ const CenteredContent = styled.div`
 const JuantonLogoCenter = styled.img`
   width: 100%;
   max-width: 400px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 17.5rem;
 `;
 
 const HomeSplashPage = () => {

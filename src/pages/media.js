@@ -22,7 +22,7 @@ const VideoPlayerLayout = styled.div`
 
 const MediaPage = () => (
   <>
-    <PageBackground className="homebg">
+    <PageBackground className="pagebg">
       <FullHeightLayout>
         <PageWrapper>
           <SectionLayout>

@@ -24,13 +24,21 @@ import '../styles/global.css';
  */
 
 const ArticleSC = styled.article`
-  ${'' /* padding-top: 5rem; */}
+  h1 {
+    margin-top: 0;
+    line-height: 1.4;
+  }
 `;
 
 const SectionLayoutSC = styled(SectionLayout)`
   && {
     padding-top: 0;
   }
+`;
+
+const Spacer = styled.div`
+  width: 100%;
+  height: 100px;
 `;
 
 const Post = ({ data, location }) => {
@@ -42,7 +50,7 @@ const Post = ({ data, location }) => {
       <Helmet>
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
-      <PageBackground className="homebg">
+      <PageBackground className="pagebg">
         <FullHeightLayout>
           <PageWrapper>
             <SectionLayoutSC>
@@ -51,7 +59,9 @@ const Post = ({ data, location }) => {
                   <figure className="post-feature-image">
                     <img src={post.feature_image} alt={post.title} />
                   </figure>
-                ) : null}
+                ) : (
+                  <Spacer />
+                )}
                 <section className="post-full-content">
                   <Heading1>{post.title}</Heading1>
 

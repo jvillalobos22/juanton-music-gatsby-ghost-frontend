@@ -22,6 +22,13 @@ export const Heading3 = styled.h3`
   margin-bottom: 24px;
 `;
 
+export const Heading4 = styled.h4`
+  font-size: 24px;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 20px;
+`;
+
 export const Body1 = styled.p`
   font-family: 'Lato', sans-serif;
   font-size: 18px;
