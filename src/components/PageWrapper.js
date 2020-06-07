@@ -26,6 +26,12 @@ const PageContent = styled.div`
   span {
     color: #fff;
   }
+
+  @media screen and (max-width: 967px) {
+    padding: 0 24px;
+  }
+  @media screen and (max-width: 539px) {
+  }
 `;
 
 const HeaderSC = styled(Header)`

@@ -22,6 +22,21 @@ const CallToAction = styled.div`
 
 const InlineButtons = styled.div`
   display: block;
+
+  @media screen and (max-width: 967px) {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin-right: 0;
+    }
+  }
+`;
+
+const VideoPlayerSC = styled(VideoPlayer)`
+  @media screen and (max-width: 539px) {
+    order: 1;
+  }
 `;
 
 const EnterSiteButton = styled(ButtonOutline)`
@@ -45,6 +60,10 @@ const EnterSiteButton = styled(ButtonOutline)`
     background-color: #fff;
     color: #222;
   }
+
+  @media screen and (max-width: 539px) {
+    order: 2;
+  }
 `;
 
 const Heading3SC = styled(Heading3)`
@@ -59,7 +78,7 @@ const EnterSiteCTA = ({ onClick }) => (
     <Heading3SC>Check out my recent interview with VEM</Heading3SC>
     <InlineButtons>
       <EnterSiteButton onClick={onClick}>Enter Site</EnterSiteButton>
-      <VideoPlayer videoId={'FrqkJLtjTlM'} hidePlayerWhenClosed />
+      <VideoPlayerSC videoId={'FrqkJLtjTlM'} hidePlayerWhenClosed />
     </InlineButtons>
   </CallToAction>
 );

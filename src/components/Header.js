@@ -62,7 +62,7 @@ const Header = ({ className }) => (
         <NavItem to="/shows">Shows</NavItem>
         <NavItem to="/media">Media</NavItem>
         <NavItem to="/blog/">Blog</NavItem>
-        <NavItem to="/">Get in touch</NavItem>
+        <NavItem to="/contact">Get in touch</NavItem>
       </StyledNav>
     </Layout>
   </HeaderSC>

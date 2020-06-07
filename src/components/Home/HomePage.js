@@ -25,12 +25,25 @@ const Heading3SC = styled(Heading3)`
 
 const HeroHeading = styled.div`
   width: 50%;
+
+  @media screen and (max-width: 967px) {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  @media screen and (max-width: 539px) {
+  }
 `;
 
 const SectionBody = styled.div`
   width: 40%;
   align-self: flex-end;
-  margin-bottom: 64px;
+  margin-bottom: 0;
+
+  @media screen and (max-width: 967px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 539px) {
+  }
 `;
 
 const SectionLayoutSC = styled(SectionLayout)`

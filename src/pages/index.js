@@ -23,6 +23,10 @@ const LayoutSC = styled.div`
   justify-content: center;
   margin: 0 auto;
   padding: 0 16px;
+
+  @media screen and (max-width: 967px) {
+    align-items: flex-start;
+  }
 `;
 
 const CenteredContent = styled.div`
@@ -32,12 +36,24 @@ const CenteredContent = styled.div`
   align-items: center;
   width: 60%;
   margin: 0 auto;
+
+  @media screen and (max-width: 967px) {
+    width: 100%;
+  }
 `;
 
 const JuantonLogoCenter = styled.img`
   width: 100%;
   max-width: 400px;
   margin-bottom: 17.5rem;
+
+  @media screen and (max-width: 967px) {
+    margin-top: 48px;
+  }
+
+  @media screen and (max-width: 539px) {
+    width: 70%;
+  }
 `;
 
 const HomeSplashPage = () => {
