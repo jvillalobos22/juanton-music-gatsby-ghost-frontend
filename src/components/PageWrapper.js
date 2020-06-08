@@ -13,7 +13,7 @@ const PageContent = styled.div`
   min-height: calc(100vh - 200px);
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 24px;
 
   h1,
   h2,

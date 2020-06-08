@@ -43,13 +43,13 @@ const DrawerMenuLayout = styled.div`
   background-color: #222;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
   overflow: scroll;
   z-index: 1000;
 
   &.hide {
-    transform: translate3d(-100vw, 0, 0);
+    transform: translate3d(+100vw, 0, 0);
   }
 
   &.show {
@@ -92,12 +92,11 @@ const NavItem = styled(Link)`
 `;
 
 const CloseNavButton = styled.button`
+  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
   position: absolute;
   top: 24px;
   right: 24px;
-
   outline: none;
-  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
   background: none;
 
   &:hover {
@@ -112,7 +111,7 @@ export const DrawerMenu = ({ isDrawerOpen, onClose }) => {
   return (
     <DrawerMenuLayout id="flyoutMenu" className={visibility}>
       <LayoutContainer>
-        <CloseNavButton onClick={() => onClose()}>
+        <CloseNavButton onClick={onClose}>
           <FontAwesomeIconSC icon={faTimes} />
         </CloseNavButton>
         <DrawerNavContainer>

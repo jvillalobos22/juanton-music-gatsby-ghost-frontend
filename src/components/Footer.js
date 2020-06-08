@@ -3,9 +3,20 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
-import { Navigation } from './common/';
-import config from '../utils/siteConfig';
 import juantonLogo from '../images/juanton_logo_cropped.png';
+import {
+  faInstagram,
+  faYoutube,
+  faTwitch,
+  faFacebook,
+  faSpotify,
+  faSoundcloud,
+  faMixcloud
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { juantonLinks } from '../helpers/links';
+import { Heading4 } from './Library/Typography';
+import { navigation } from '../helpers/navigation';
 
 import '../styles/app.css';
 
@@ -39,14 +50,20 @@ const FooterContent = styled.div`
   min-height: 100px;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 40px 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 
   section {
     width: 50%;
+  }
+
+  @media screen and (max-width: 767px) {
+    section {
+      width: 100%;
+    }
   }
 `;
 
@@ -61,36 +78,97 @@ const FullWidthSection = styled.div`
 
 const SectionLeft = styled.section`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 767px) {
+    order: 2;
+    justify-content: center;
+  }
 `;
 
 const SectionRight = styled.section`
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-`;
+  aling-items: center;
+  height: 100%;
 
-const SocialButtons = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
+  @media screen and (max-width: 767px) {
+    order: 1;
+    margin-bottom: 48px;
+    justify-content: center;
+  }
 `;
 
 const FooterNav = styled.div`
   a {
     margin-right: 24px;
   }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const SocialIconsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
+`;
+
+const SocialIcon = styled.a`
+  && {
+    font-size: 24px;
+    margin: 0 16px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+    }
+  }
+`;
+
+const FooterHeading = styled(Heading4)`
+  font-size: 18px;
+  margin: 28px 0;
+  color: #fff;
+  a {
+    font-size: inherit;
+    color: #b71c1c;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 0 0 28px 0;
+  }
+`;
+
+const NavItem = styled(Link)`
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+    color: red;
+    font-weight: 600;
+  }
 `;
 
 const Footer = ({ data, className }) => {
   const site = data.allGhostSettings.edges[0].node;
-  const twitterUrl = site.twitter
-    ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
-    : null;
-  const facebookUrl = site.facebook
-    ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}`
-    : null;
 
   const currentYear = new Date().getFullYear();
   return (
@@ -98,56 +176,79 @@ const Footer = ({ data, className }) => {
       <FooterContent>
         <SectionLeft>
           <FooterNav>
-            <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+            {navigation.map(navItem => (
+              <NavItem key={navItem.id} to={navItem.route}>
+                {navItem.label}
+              </NavItem>
+            ))}
           </FooterNav>
-        </SectionLeft>
-
-        <SectionRight>
-          <SocialButtons>
-            {site.twitter && (
-              <a
-                href={twitterUrl}
-                className="site-nav-item"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  className="site-nav-icon"
-                  src="/images/icons/twitter.svg"
-                  alt="Twitter"
-                />
-              </a>
-            )}
-
-            {site.facebook && (
-              <a
-                href={facebookUrl}
-                className="site-nav-item"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  className="site-nav-icon"
-                  src="/images/icons/facebook.svg"
-                  alt="Facebook"
-                />
-              </a>
-            )}
-
-            <a
-              className="site-nav-item"
-              href={`https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/`}
+          <FooterHeading>
+            Bookings:{' '}
+            <a href="mailto:bookings@juantonmusic.com">
+              bookings@juantonmusic.com
+            </a>
+          </FooterHeading>
+          <SocialIconsContainer>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.spotify.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                className="site-nav-icon"
-                src="/images/icons/rss.svg"
-                alt="RSS Feed"
-              />
-            </a>
-          </SocialButtons>
+              <FontAwesomeIcon icon={faSpotify} />
+            </SocialIcon>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.soundcloud.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faSoundcloud} />
+            </SocialIcon>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.instagram.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </SocialIcon>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.facebook.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </SocialIcon>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.twitch.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faTwitch} />
+            </SocialIcon>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.youtube.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faYoutube} />
+            </SocialIcon>
+            <SocialIcon
+              className="icon"
+              href={juantonLinks.mixcloud.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faMixcloud} />
+            </SocialIcon>
+          </SocialIconsContainer>
+        </SectionLeft>
 
+        <SectionRight>
           <FooterLogoButton to="/">
             <img
               src={juantonLogo}

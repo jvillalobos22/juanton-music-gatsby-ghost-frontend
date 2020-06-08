@@ -8,9 +8,15 @@ import {
   SectionHeading
 } from '../components/Library/Layout';
 import PageWrapper from '../components/PageWrapper';
-import { Heading2 } from '../components/Library/Typography';
-
-// import '../styles/original.css';
+import { Heading2, Body1 } from '../components/Library/Typography';
+import { juantonLinks } from '../helpers/links';
+import {
+  faInstagram,
+  faYoutube,
+  faTwitch,
+  faFacebook
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/global.css';
 
 // const ShowsListing = styled.div`
@@ -67,7 +73,49 @@ const FlyerCard = styled.div`
     width: 100%;
     height: auto;
   }
+
+  @media screen and (max-width: 1023px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
+
+const FollowSection = styled.div`
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+`;
+
+const SocialIconsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  a.icon svg {
+    color: '#b71c1c';
+  }
+`;
+
+const SocialIcon = styled.a`
+  && {
+    font-size: 32px;
+    margin: 16px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2, 1.2);
+    }
+  }
+`;
+
+const SocialFontAwesome = styled(FontAwesomeIcon)``;
 
 const ShowsPage = () => (
   <>
@@ -76,6 +124,91 @@ const ShowsPage = () => (
         <PageWrapper>
           <SectionLayoutSC>
             <Layout>
+              <SectionHeading>
+                <Heading2>COVID-19 Update</Heading2>
+              </SectionHeading>
+              <FollowSection className="content-body">
+                <Body1>
+                  With all 2020 shows & festivals being cancelled, I will not be
+                  able to perform any live shows until 2021 at the earliest, but
+                  I will be streaming live DJ sets on{' '}
+                  <a
+                    href={juantonLinks.twitch.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Twitch
+                  </a>{' '}
+                  &{' '}
+                  <a
+                    href={juantonLinks.youtube.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    YouTube
+                  </a>
+                  . I will also begin streaming live production sessions soon so
+                  keep an eye out for Juanton announcements in your social
+                  feeds.
+                </Body1>
+                <SectionHeading>
+                  <Heading2>When Will I Play Next?</Heading2>
+                </SectionHeading>
+                <Body1>
+                  You can stay up to date with all my upcoming production and DJ
+                  streams by following me on{' '}
+                  <a
+                    href={juantonLinks.instagram.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>{' '}
+                  or{' '}
+                  <a
+                    href={juantonLinks.facebook.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Facebook
+                  </a>{' '}
+                  where I frequently post updates on upcoming events.
+                </Body1>
+                <SocialIconsContainer>
+                  <SocialIcon
+                    className="icon"
+                    href={juantonLinks.instagram.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialFontAwesome icon={faInstagram} />
+                  </SocialIcon>
+                  <SocialIcon
+                    className="icon"
+                    href={juantonLinks.facebook.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialFontAwesome icon={faFacebook} />
+                  </SocialIcon>
+                  <SocialIcon
+                    className="icon"
+                    href={juantonLinks.twitch.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialFontAwesome icon={faTwitch} />
+                  </SocialIcon>
+                  <SocialIcon
+                    className="icon"
+                    href={juantonLinks.youtube.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialFontAwesome icon={faYoutube} />
+                  </SocialIcon>
+                </SocialIconsContainer>
+              </FollowSection>
               <SectionHeading>
                 <Heading2>2020 Shows</Heading2>
               </SectionHeading>

@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
@@ -78,6 +79,7 @@
     "lodash": "4.17.15",
     "prop-types": "^15.7.2",
     "react": "16.13.0",
+    "react-cookie": "^4.0.3",
     "react-dom": "16.13.0",
     "react-google-font-loader": "^1.1.0",
     "react-helmet": "5.2.1",

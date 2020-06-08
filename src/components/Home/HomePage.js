@@ -28,9 +28,6 @@ const HeroHeading = styled.div`
 
   @media screen and (max-width: 967px) {
     width: 100%;
-    margin-bottom: 32px;
-  }
-  @media screen and (max-width: 539px) {
   }
 `;
 
@@ -41,8 +38,7 @@ const SectionBody = styled.div`
 
   @media screen and (max-width: 967px) {
     width: 100%;
-  }
-  @media screen and (max-width: 539px) {
+    padding-top: 32px;
   }
 `;
 

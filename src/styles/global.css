@@ -323,6 +323,7 @@ strong {
   margin: 0.8em 0 0.4em 0;
   font-size: 1.75rem;
   font-weight: 700;
+  line-height: 1.6;
 }
 @media (max-width: 500px) {
   .content-body h2 {
@@ -350,6 +351,23 @@ strong {
 @media (max-width: 500px) {
   .content-body h4 {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .post-full-content {
+    width: 80%;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 739px) {
+  .post-full-content {
+    width: 100%;
+    padding: 0 24px;
+
+    line-height: 1.8;
   }
 }
 

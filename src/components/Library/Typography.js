@@ -5,6 +5,7 @@ export const Heading1 = styled.h1`
   font-weight: 300;
   display: block;
   margin-bottom: 40px;
+  line-height: 1.4;
 `;
 
 export const Heading2 = styled.h2`
@@ -13,6 +14,7 @@ export const Heading2 = styled.h2`
   display: block;
   margin-bottom: 24px;
   letter-spacing: 1px;
+  line-height: 1.4;
 `;
 
 export const Heading3 = styled.h3`
@@ -20,6 +22,7 @@ export const Heading3 = styled.h3`
   font-weight: 400;
   display: block;
   margin-bottom: 24px;
+  line-height: 1.4;
 `;
 
 export const Heading4 = styled.h4`

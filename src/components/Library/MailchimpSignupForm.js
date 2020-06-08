@@ -21,6 +21,7 @@ const StyledInput = styled.input`
 
 const SignUpButton = styled(ButtonOutline)`
   margin-top: 16px;
+  margin-bottom: 0;
 `;
 
 const MailchimpSignupForm = () => {
