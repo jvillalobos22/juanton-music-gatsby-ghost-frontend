@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import React from 'react';
 import juantonLogo from '../images/juanton_logo_cropped.png';
+import { NavButton } from './NavigationDrawer';
+import { navigation } from '../helpers/navigation';
 
 const HeaderSC = styled.header`
   background: rgba(0, 0, 0, 0.3);
@@ -29,7 +31,19 @@ const HomeLogoButton = styled(Link)`
   }
 `;
 
-const StyledNav = styled.nav``;
+const StyledNav = styled.nav`
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+`;
+
+const MobileNavButton = styled(NavButton)`
+  display: none;
+
+  @media screen and (max-width: 1023px) {
+    display: block;
+  }
+`;
 
 const NavItem = styled(Link)`
   padding: 9px 16px 6px 16px;
@@ -46,7 +60,7 @@ const NavItem = styled(Link)`
   }
 `;
 
-const Header = ({ className }) => (
+const Header = ({ className, toggleDrawerOpen }) => (
   <HeaderSC className={className}>
     <Layout>
       <HomeLogoButton to="/">
@@ -56,24 +70,32 @@ const Header = ({ className }) => (
                   Villalobos"
         />
       </HomeLogoButton>
+      <MobileNavButton onClick={toggleDrawerOpen} />
       <StyledNav>
-        <NavItem to="/bio">Bio</NavItem>
+        {navigation.map(navItem => (
+          <NavItem key={navItem.id} to={navItem.route}>
+            {navItem.label}
+          </NavItem>
+        ))}
+        {/* <NavItem to="/bio">Bio</NavItem>
         <NavItem to="/music">Music</NavItem>
         <NavItem to="/shows">Shows</NavItem>
         <NavItem to="/media">Media</NavItem>
         <NavItem to="/blog/">Blog</NavItem>
-        <NavItem to="/contact">Get in touch</NavItem>
+        <NavItem to="/contact">Get in touch</NavItem> */}
       </StyledNav>
     </Layout>
   </HeaderSC>
 );
 
 Header.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  toggleDrawerOpen: PropTypes.func
 };
 
 Header.defaultProps = {
-  className: ``
+  className: ``,
+  toggleDrawerOpen: undefined
 };
 
 export default Header;

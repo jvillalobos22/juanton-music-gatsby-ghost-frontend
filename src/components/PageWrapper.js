@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import { DrawerMenu } from './NavigationDrawer';
 
 const PageContent = styled.div`
   position: relative;
@@ -42,13 +43,29 @@ const HeaderSC = styled(Header)`
   right: 0;
 `;
 
-const PageWrapper = ({ children }) => (
-  <>
-    <HeaderSC />
-    <PageContent>{children}</PageContent>
-    <Footer />
-  </>
-);
+const PageWrapper = ({ children }) => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawerOpen = () => setIsDrawerOpen(!isDrawerOpen);
+
+  const handleMouseDown = e => {
+    toggleDrawerOpen();
+
+    e.stopPropagation();
+  };
+
+  return (
+    <>
+      <DrawerMenu isDrawerOpen={isDrawerOpen} onClose={toggleDrawerOpen} />
+      <HeaderSC
+        toggleDrawerOpen={toggleDrawerOpen}
+        handleMouseDown={handleMouseDown}
+      />
+      <PageContent>{children}</PageContent>
+      <Footer />
+    </>
+  );
+};
 
 PageWrapper.propTypes = {
   siteTitle: PropTypes.string
