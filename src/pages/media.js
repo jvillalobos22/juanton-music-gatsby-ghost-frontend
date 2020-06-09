@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import PropTypes from 'prop-types';
 import {
   PageBackground,
   FullHeightLayout,
@@ -11,7 +11,6 @@ import PageWrapper from '../components/PageWrapper';
 import { Heading2, Body1, Heading3 } from '../components/Library/Typography';
 import VideoPlayer from '../components/Library/VideoPlayer';
 
-// import '../styles/original.css';
 import '../styles/global.css';
 import { AnchorOutline } from '../components/Library/Buttons';
 
@@ -34,11 +33,11 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `;
 
-const MediaPage = () => (
+const MediaPage = ({ location }) => (
   <>
     <PageBackground className="pagebg">
       <FullHeightLayout>
-        <PageWrapper>
+        <PageWrapper currentPath={location.pathname}>
           <SectionLayout>
             <SectionHeading>
               <Heading2>Juanton in the Media</Heading2>
@@ -75,5 +74,11 @@ const MediaPage = () => (
     </PageBackground>
   </>
 );
+
+MediaPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default MediaPage;

@@ -52,7 +52,7 @@ const Post = ({ data, location }) => {
       </Helmet>
       <PageBackground className="pagebg">
         <FullHeightLayout>
-          <PageWrapper>
+          <PageWrapper currentPath={location.pathname}>
             <SectionLayoutSC>
               <ArticleSC className="content">
                 {post.feature_image ? (

@@ -15,7 +15,6 @@ import { Link } from 'gatsby';
 const Navigation = ({ data, navClass }) => (
   <>
     {data.map((navItem, i) => {
-      console.log('navItem.url', navItem.url);
       if (navItem.url.match(/^\s?http(s?)/gi)) {
         return (
           <a

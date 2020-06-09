@@ -7,7 +7,7 @@ import { NavButton } from './NavigationDrawer';
 import { navigation } from '../helpers/navigation';
 
 const HeaderSC = styled.header`
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
 `;
 
 const Layout = styled.div`
@@ -55,12 +55,13 @@ const NavItem = styled(Link)`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.selected {
     border: 1px solid #fff;
   }
 `;
 
-const Header = ({ className, toggleDrawerOpen }) => (
+const Header = ({ className, toggleDrawerOpen, currentPath }) => (
   <HeaderSC className={className}>
     <Layout>
       <HomeLogoButton to="/">
@@ -72,17 +73,18 @@ const Header = ({ className, toggleDrawerOpen }) => (
       </HomeLogoButton>
       <MobileNavButton onClick={toggleDrawerOpen} />
       <StyledNav>
-        {navigation.map(navItem => (
-          <NavItem key={navItem.id} to={navItem.route}>
-            {navItem.label}
-          </NavItem>
-        ))}
-        {/* <NavItem to="/bio">Bio</NavItem>
-        <NavItem to="/music">Music</NavItem>
-        <NavItem to="/shows">Shows</NavItem>
-        <NavItem to="/media">Media</NavItem>
-        <NavItem to="/blog/">Blog</NavItem>
-        <NavItem to="/contact">Get in touch</NavItem> */}
+        {navigation.map(navItem => {
+          const isCurrent = currentPath === navItem.route;
+          return (
+            <NavItem
+              key={navItem.id}
+              to={navItem.route}
+              className={isCurrent ? 'selected' : ''}
+            >
+              {navItem.label}
+            </NavItem>
+          );
+        })}
       </StyledNav>
     </Layout>
   </HeaderSC>
@@ -90,11 +92,13 @@ const Header = ({ className, toggleDrawerOpen }) => (
 
 Header.propTypes = {
   className: PropTypes.string,
+  currentPath: PropTypes.string,
   toggleDrawerOpen: PropTypes.func
 };
 
 Header.defaultProps = {
   className: ``,
+  currentPath: '',
   toggleDrawerOpen: undefined
 };
 

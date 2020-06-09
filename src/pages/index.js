@@ -71,7 +71,6 @@ const HomeSplashPage = () => {
     setCookie('hasVisitedHome', true, { path: '/' });
   };
 
-  console.log('cookies', cookies);
   return (
     <>
       <PageBackground className="homebg">

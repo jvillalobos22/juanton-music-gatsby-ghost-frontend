@@ -82,6 +82,10 @@ const NavItem = styled(Link)`
   text-transform: uppercase;
   margin-bottom: 24px;
 
+  &.selected {
+    color: #b71c1c;
+  }
+
   &:hover,
   &:focus,
   &:active {
@@ -105,7 +109,7 @@ const CloseNavButton = styled.button`
   }
 `;
 
-export const DrawerMenu = ({ isDrawerOpen, onClose }) => {
+export const DrawerMenu = ({ isDrawerOpen, onClose, currentPath }) => {
   const visibility = isDrawerOpen ? 'show' : 'hide';
 
   return (
@@ -115,11 +119,19 @@ export const DrawerMenu = ({ isDrawerOpen, onClose }) => {
           <FontAwesomeIconSC icon={faTimes} />
         </CloseNavButton>
         <DrawerNavContainer>
-          {navigation.map(navItem => (
-            <NavItem key={navItem.id} to={navItem.route}>
-              {navItem.label}
-            </NavItem>
-          ))}
+          {navigation.map(navItem => {
+            const isCurrent = currentPath === navItem.route;
+
+            return (
+              <NavItem
+                key={navItem.id}
+                to={navItem.route}
+                className={isCurrent ? 'selected' : ''}
+              >
+                {navItem.label}
+              </NavItem>
+            );
+          })}
         </DrawerNavContainer>
       </LayoutContainer>
     </DrawerMenuLayout>
@@ -128,9 +140,11 @@ export const DrawerMenu = ({ isDrawerOpen, onClose }) => {
 
 DrawerMenu.propTypes = {
   isDrawerOpen: PropTypes.bool,
+  currentPath: PropTypes.string,
   onClose: PropTypes.func
 };
 DrawerMenu.defaultProps = {
   isDrawerOpen: false,
+  currentPath: '',
   onClose: undefined
 };

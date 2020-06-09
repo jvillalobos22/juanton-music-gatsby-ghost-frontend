@@ -51,7 +51,7 @@ const Page = ({ data, location }) => {
       </Helmet>
       <PageBackground className="pagebg">
         <FullHeightLayout>
-          <PageWrapper>
+          <PageWrapper currentPath={location.pathname}>
             <SectionLayoutSC>
               <ArticleSC className="content">
                 {page.feature_image ? (

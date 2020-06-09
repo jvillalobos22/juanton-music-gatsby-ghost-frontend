@@ -43,7 +43,6 @@ const MailchimpSignupForm = () => {
     addToMailchimp(email, { firstName })
       // eslint-disable-next-line no-unused-vars
       .then(data => {
-        console.log('addToMailchimp response: ', data);
         setFormCompleted(true);
       })
       .catch(error => {

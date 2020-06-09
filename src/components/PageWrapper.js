@@ -43,7 +43,7 @@ const HeaderSC = styled(Header)`
   right: 0;
 `;
 
-const PageWrapper = ({ children }) => {
+const PageWrapper = ({ children, currentPath }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawerOpen = () => setIsDrawerOpen(!isDrawerOpen);
@@ -56,10 +56,15 @@ const PageWrapper = ({ children }) => {
 
   return (
     <>
-      <DrawerMenu isDrawerOpen={isDrawerOpen} onClose={toggleDrawerOpen} />
+      <DrawerMenu
+        isDrawerOpen={isDrawerOpen}
+        onClose={toggleDrawerOpen}
+        currentPath={currentPath}
+      />
       <HeaderSC
         toggleDrawerOpen={toggleDrawerOpen}
         handleMouseDown={handleMouseDown}
+        currentPath={currentPath}
       />
       <PageContent>{children}</PageContent>
       <Footer />
@@ -68,11 +73,13 @@ const PageWrapper = ({ children }) => {
 };
 
 PageWrapper.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
+  currentPath: PropTypes.string
 };
 
 PageWrapper.defaultProps = {
-  siteTitle: ''
+  siteTitle: '',
+  currentPath: ''
 };
 
 export default PageWrapper;

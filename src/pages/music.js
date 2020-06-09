@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSpotify,
@@ -190,11 +192,11 @@ const SocialIcon = styled.a`
   }
 `;
 
-const MusicPage = () => (
+const MusicPage = ({ location }) => (
   <>
     <PageBackground className="pagebg">
       <FullHeightLayout>
-        <PageWrapper>
+        <PageWrapper currentPath={location.pathname}>
           <SectionLayout>
             <SectionHeading>
               <Heading2>Juanton Original Tracks</Heading2>
@@ -206,7 +208,7 @@ const MusicPage = () => (
                   width="300"
                   height="380"
                   frameBorder="0"
-                  allowTransparency="true"
+                  allowtransparency="true"
                   allow="encrypted-media"
                 ></iframe>
                 <CardText>
@@ -220,7 +222,7 @@ const MusicPage = () => (
                   width="300"
                   height="380"
                   frameBorder="0"
-                  allowTransparency="true"
+                  allowtransparency="true"
                   allow="encrypted-media"
                 ></iframe>
                 <CardText>
@@ -283,7 +285,7 @@ const MusicPage = () => (
                   <iframe
                     src="https://player.twitch.tv/?video=633042804&parent=www.juantonmusic.com&autoplay=false"
                     frameBorder="0"
-                    allowFullscreen="true"
+                    allowFullScreen={true}
                     scrolling="no"
                     height="100%"
                     width="100%"
@@ -301,7 +303,7 @@ const MusicPage = () => (
                   <iframe
                     src="https://player.twitch.tv/?video=620781383&parent=www.juantonmusic.com&autoplay=false"
                     frameBorder="0"
-                    allowFullscreen="true"
+                    allowFullScreen={true}
                     scrolling="no"
                     height="100%"
                     width="100%"
@@ -342,5 +344,11 @@ const MusicPage = () => (
     </PageBackground>
   </>
 );
+
+MusicPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default MusicPage;

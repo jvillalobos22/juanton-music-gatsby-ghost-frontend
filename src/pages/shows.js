@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import PropTypes from 'prop-types';
 import {
   PageBackground,
   FullHeightLayout,
@@ -117,11 +117,11 @@ const SocialIcon = styled.a`
 
 const SocialFontAwesome = styled(FontAwesomeIcon)``;
 
-const ShowsPage = () => (
+const ShowsPage = ({ location }) => (
   <>
     <PageBackground className="pagebg">
       <FullHeightLayout>
-        <PageWrapper>
+        <PageWrapper currentPath={location.pathname}>
           <SectionLayoutSC>
             <Layout>
               <SectionHeading>
@@ -326,5 +326,10 @@ const ShowsPage = () => (
     </PageBackground>
   </>
 );
+ShowsPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default ShowsPage;

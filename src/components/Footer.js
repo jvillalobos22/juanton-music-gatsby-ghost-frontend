@@ -162,7 +162,7 @@ const NavItem = styled(Link)`
   &:active {
     cursor: pointer;
     transform: scale(1.2, 1.2);
-    color: red;
+    color: #b71c1c;
     font-weight: 600;
   }
 `;
@@ -269,7 +269,6 @@ const Footer = ({ data, className }) => {
 };
 
 Footer.propTypes = {
-  children: PropTypes.node.isRequired,
   bodyClass: PropTypes.string,
   className: PropTypes.string,
   data: PropTypes.shape({

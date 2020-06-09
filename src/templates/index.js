@@ -111,7 +111,7 @@ const Index = ({ data, location, pageContext }) => {
               </HeroHeading>
             </HeroBg>
           </HeroSection>
-          <PageWrapper>
+          <PageWrapper currentPath={location.pathname}>
             <SectionLayout>
               <PostsSection>
                 {posts.map(({ node }) => (
