@@ -6,6 +6,17 @@ export const Heading1 = styled.h1`
   display: block;
   margin-bottom: 40px;
   line-height: 1.4;
+
+  @media screen and (max-width: 1023px) {
+  }
+  @media screen and (max-width: 967px) {
+  }
+  @media screen and (max-width: 749px) {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  @media screen and (max-width: 599px) {
+  }
 `;
 
 export const Heading2 = styled.h2`
@@ -23,6 +34,16 @@ export const Heading3 = styled.h3`
   display: block;
   margin-bottom: 24px;
   line-height: 1.4;
+
+  @media screen and (max-width: 1023px) {
+  }
+  @media screen and (max-width: 967px) {
+  }
+  @media screen and (max-width: 749px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 599px) {
+  }
 `;
 
 export const Heading4 = styled.h4`

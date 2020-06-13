@@ -65,11 +65,7 @@ const Header = ({ className, toggleDrawerOpen, currentPath }) => (
   <HeaderSC className={className}>
     <Layout>
       <HomeLogoButton to="/">
-        <img
-          src={juantonLogo}
-          alt="JV - Initials of Juan
-                  Villalobos"
-        />
+        <img src={juantonLogo} alt="Juanton Music Logo" />
       </HomeLogoButton>
       <MobileNavButton onClick={toggleDrawerOpen} />
       <StyledNav>

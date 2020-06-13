@@ -235,14 +235,14 @@ const ShowsPage = ({ location }) => (
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/halcyon_zendlo_flyer_banner_5.26.20.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Halcyon SF for Zendlo Show May 26 2020 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/halcyon_franklynwatts_johnsummit_flyer_insta_1.11.20.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Halcyon SF for Franklyn Watts Show January 11 2020 flyer"
                   />
                 </FlyerCard>
               </FlyerCardsSection>
@@ -254,49 +254,49 @@ const ShowsPage = ({ location }) => (
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/eye_heart_nye_2019-2020_flyer.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Eye Heart NYE 2019-2020 ft Dillon Francis flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/gbbx_flyer_12.20.19.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Ghostbag for Christmas December 20 2019 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/tmtt_flyer_10.26.19.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Take Me To Tequila October 26 2019 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/begerac_flyer_101719.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Bergerac Housekeeping November 17 2019 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/infinityroom_flyer_19_apr_2019.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Temple Infinity Room April 19 2019 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/wishbar_flyer_2.16.19.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Wishbar Housekeeping February 16 2019 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/ingoodcompany_flyer_01.04.19.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Public Works SF In Good Company January 04 2019 flyer"
                   />
                 </FlyerCard>
               </FlyerCardsSection>
@@ -308,14 +308,14 @@ const ShowsPage = ({ location }) => (
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/will_clarke_flyer_12.05.18.jpg"
-                    alt="Twitter"
+                    alt="Juanton at the El Rey Theater Chico ft Will Clarke December 05 2018 flyer"
                   />
                 </FlyerCard>
                 <FlyerCard>
                   <img
                     className="site-nav-icon"
                     src="/images/flyers/infinityroom_flyer_8_sep_2018.jpg"
-                    alt="Twitter"
+                    alt="Juanton at Temple Infinity Room September 8 2018 flyer"
                   />
                 </FlyerCard>
               </FlyerCardsSection>

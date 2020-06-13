@@ -26,6 +26,10 @@ const ArticleSC = styled.article`
   h1 {
     margin-top: 0;
     line-height: 1.4;
+
+    @media screen and (max-width: 749px) {
+      font-size: 40px;
+    }
   }
 `;
 

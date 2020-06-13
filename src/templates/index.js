@@ -33,9 +33,11 @@ const PostsSection = styled.section`
 
   @media (max-width: 980px) {
     grid-template-columns: 1fr 1fr;
+    padding: 64px 0;
   }
   @media (max-width: 680px) {
     grid-template-columns: 1fr;
+    padding: 16px 0 0;
   }
 `;
 
@@ -66,6 +68,16 @@ const HeroBg = styled.div`
     right: 0;
     witdth: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  @media screen and (max-width: 967px) {
+    min-height: 400px;
+  }
+  @media screen and (max-width: 749px) {
+    min-height: 300px;
+  }
+  @media screen and (max-width: 599px) {
+    min-height: 250px;
   }
 `;
 

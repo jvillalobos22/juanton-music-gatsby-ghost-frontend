@@ -77,3 +77,6 @@ yarn-error.log
 .ghost.json
 
 hidden
+
+# firebase files
+.firebase

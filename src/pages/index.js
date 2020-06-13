@@ -45,12 +45,28 @@ const JuantonLogoCenter = styled.img`
   max-width: 400px;
   margin-bottom: 17.5rem;
 
-  @media screen and (max-width: 967px) {
+  @media screen and (max-width: 1500px) {
+    margin-bottom: 8.5rem;
+  }
+
+  @media screen and (max-width: 1200px) {
     margin-top: 48px;
+    margin-bottom: 6.5rem;
+  }
+
+  @media screen and (max-width: 976px) {
+    margin-top: 48px;
+    margin-bottom: 3.5rem;
   }
 
   @media screen and (max-width: 539px) {
     width: 70%;
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (max-height: 600px) {
+    width: 70%;
+    margin-bottom: 0;
   }
 `;
 

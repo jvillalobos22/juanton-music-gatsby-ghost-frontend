@@ -77,7 +77,7 @@ const DrawerNavContainer = styled.div`
 const NavItem = styled(Link)`
   padding: 9px 16px 6px 16px;
   border: 1px solid transparent;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 24px;

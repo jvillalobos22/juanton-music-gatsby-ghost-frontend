@@ -119,19 +119,27 @@ const SocialIconsContainer = styled.div`
 
   @media screen and (max-width: 767px) {
     justify-content: center;
+    flex-wrap: wrap;
   }
 `;
 
 const SocialIcon = styled.a`
   && {
     font-size: 24px;
-    margin: 0 16px;
+    margin: 8px 16px;
     &:first-child {
       margin-left: 0;
     }
     &:hover {
       cursor: pointer;
       transform: scale(1.1, 1.1);
+    }
+
+    @media screen and (max-width: 767px) {
+      margin: 8px 32px;
+      &:first-child {
+        margin-left: 32px;
+      }
     }
   }
 `;
@@ -148,6 +156,7 @@ const FooterHeading = styled(Heading4)`
 
   @media screen and (max-width: 767px) {
     margin: 0 0 28px 0;
+    text-align: center;
   }
 `;
 
@@ -250,11 +259,7 @@ const Footer = ({ data, className }) => {
 
         <SectionRight>
           <FooterLogoButton to="/">
-            <img
-              src={juantonLogo}
-              alt="JV - Initials of Juan
-                  Villalobos"
-            />
+            <img src={juantonLogo} alt="Juanton Music Logo" />
           </FooterLogoButton>
         </SectionRight>
       </FooterContent>

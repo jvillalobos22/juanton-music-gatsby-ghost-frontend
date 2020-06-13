@@ -48,6 +48,13 @@ export const SectionLayout = styled.div`
   ${'' /* min-height: 100vh; */}
   min-height: calc(100vh - 236px);
   padding-top: 36px;
+
+  @media screen and (max-width: 749px) {
+    padding-top: 24px;
+  }
+  @media screen and (max-width: 599px) {
+    padding-top: 16px;
+  }
 `;
 
 export const SectionHeading = styled.div`
