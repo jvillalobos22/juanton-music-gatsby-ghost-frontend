@@ -41,6 +41,15 @@ module.exports = {
   },
   plugins: [
     /**
+     *  Style Plugins
+     */
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      }
+    },
+    /**
      *  Content Plugins
      */
     {

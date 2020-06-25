@@ -22,11 +22,15 @@ const CallToAction = styled.div`
 const InlineButtons = styled.div`
   display: block;
 
+  a {
+    margin-right: 0;
+  }
   @media screen and (max-width: 967px) {
     display: flex;
     flex-direction: column;
 
-    button {
+    button,
+    a {
       margin-right: 0;
     }
   }
