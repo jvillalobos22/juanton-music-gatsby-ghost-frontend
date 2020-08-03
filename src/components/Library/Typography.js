@@ -51,6 +51,7 @@ export const Heading4 = styled.h4`
   font-weight: 300;
   display: block;
   margin-bottom: 20px;
+  line-height: 1.4;
 `;
 
 export const Body1 = styled.p`

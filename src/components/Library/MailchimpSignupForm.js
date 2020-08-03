@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import { Heading3, Body1 } from '../Library/Typography';
 import { ButtonOutline } from '../Library/Buttons';
@@ -17,6 +18,7 @@ const StyledInput = styled.input`
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 24px;
+  margin-top: 4px;
 `;
 
 const SignUpButton = styled(ButtonOutline)`
@@ -24,7 +26,7 @@ const SignUpButton = styled(ButtonOutline)`
   margin-bottom: 0;
 `;
 
-const MailchimpSignupForm = () => {
+const MailchimpSignupForm = ({ message }) => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [formCompleted, setFormCompleted] = useState(false);
@@ -54,17 +56,15 @@ const MailchimpSignupForm = () => {
     <>
       <Heading3>Thanks for signing up.</Heading3>{' '}
       <Body1>
-        Check your inbox for a verification email and click through to receive a
+        Keep an eye on your inbox for an exclusive free download!
+        {/* Check your inbox for a verification email and click through to receive a
         free ableton rack from my last track as well as a video explaining how
-        to use it for your own productions. Cheers!
+        to use it for your own productions. Cheers! */}
       </Body1>
     </>
   ) : (
     <>
-      <Body1>
-        Would you like a free Ableton rack I used while creating my most recent
-        track?
-      </Body1>
+      <Body1>{message}</Body1>
       <Body1>Sign up for my email list below</Body1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
@@ -77,4 +77,11 @@ const MailchimpSignupForm = () => {
   );
 };
 
+MailchimpSignupForm.propTypes = {
+  message: PropTypes.string
+};
+MailchimpSignupForm.defaultProps = {
+  message:
+    'Share your email below to be get production tips & tricks straight to your inbox. I will also be sharing the latest news on Juanton, exclusive free downloads of my tracks and production racks, and all the latest Juanton news.'
+};
 export default MailchimpSignupForm;
