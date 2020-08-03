@@ -79,7 +79,7 @@ const TwitchNewsletterSignup = ({ location }) => (
                 <Heading2>Thanks for Watching the Stream!</Heading2>
               </SectionHeading>
               <FollowSection className="content-body">
-                <MailchimpSignupForm message="I really appreciate you joining our us. If you could share your email with me below, I'll send production tips & tricks straight to your inbox. As a special gift to my Twitch viewers, I'll also be sending you an exclusive free download of one of my tracks." />
+                <MailchimpSignupForm message="I really appreciate you joining us. If you could share your email with me below, I'll send production tips & tricks straight to your inbox. As a special gift to my Twitch viewers, I'll also be sending you an exclusive free download of one of my tracks." />
 
                 <SectionHeadingSC>
                   <Heading2>Streaming Every Monday @ 6pm!</Heading2>
