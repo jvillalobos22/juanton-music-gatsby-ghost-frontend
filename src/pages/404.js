@@ -83,8 +83,8 @@ const NotFoundPage = ({ location }) => (
               </SectionHeading>
               <FollowSection className="content-body">
                 <Body1>
-                  Well this is embarassing. The link you tryign to access
-                  doesn&apos;t seem to exist. Maybe try returing to the{' '}
+                  Well this is embarassing. The link you trying to access does
+                  not seem to exist. Maybe try returning to the{' '}
                   <Link to="/">home page</Link> to start over.
                 </Body1>
                 <SectionHeading>
@@ -98,9 +98,9 @@ const NotFoundPage = ({ location }) => (
                 </SectionHeadingSC>
                 <Body1>
                   If you are a producer or just want to learn more about music
-                  production, join me at 6pm PST every monday where I&apos;ll be
-                  streaming live music production using Ableton Live. If you
-                  want to join us, make sure to follow the channel on{' '}
+                  production, join me at 6pm PST every Monday, where I will be
+                  streaming live music production in Ableton Live. If you want
+                  to join us, make sure to follow the channel on{' '}
                   <a
                     href={juantonLinks.twitch.href}
                     target="_blank"
@@ -116,7 +116,8 @@ const NotFoundPage = ({ location }) => (
                   >
                     YouTube
                   </a>
-                  .
+                  and click the notification icon to be notified when the stream
+                  is live.
                 </Body1>
                 <Body1>
                   You can stay up to date with all my upcoming production and DJ
