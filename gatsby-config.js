@@ -160,34 +160,10 @@ module.exports = {
                             }
                         }
                     }
-                    allGhostTag {
-                        edges {
-                            node {
-                                id
-                                slug
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostAuthor {
-                        edges {
-                            node {
-                                id
-                                slug
-                                profile_image
-                            }
-                        }
-                    }
                 }`,
         mapping: {
           allGhostPost: {
             sitemap: `posts`
-          },
-          allGhostTag: {
-            sitemap: `tags`
-          },
-          allGhostAuthor: {
-            sitemap: `authors`
           },
           allGhostPage: {
             sitemap: `pages`
@@ -208,6 +184,12 @@ module.exports = {
       options: {
         endpoint:
           'https://juantonmusic.us4.list-manage.com/subscribe/post?u=69aa955ba448a1f4a131a5a12&amp;id=59357e02cc'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-174578032-1'
       }
     },
     `gatsby-plugin-catch-links`,

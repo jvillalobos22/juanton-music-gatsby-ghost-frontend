@@ -60,19 +60,19 @@ const RecentMusicLayout = styled.div`
   }
 `;
 
-const RecentStreamsLayout = styled.div`
-  && {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-bottom: 5rem;
+// const RecentStreamsLayout = styled.div`
+//   && {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-evenly;
+//     flex-wrap: wrap;
+//     margin-bottom: 5rem;
 
-    @media screen and (max-width: 799px) {
-      justify-content: center;
-    }
-  }
-`;
+//     @media screen and (max-width: 799px) {
+//       justify-content: center;
+//     }
+//   }
+// `;
 
 const TrackCard = styled.div`
   margin: 0 1rem;
@@ -101,35 +101,35 @@ const CardText = styled.div`
   margin: 0 0.5rem;
 `;
 
-const StreamCard = styled.div`
-  min-width: 40%;
-  margin-bottom: 3rem;
+// const StreamCard = styled.div`
+//   min-width: 40%;
+//   margin-bottom: 3rem;
 
-  @media screen and (max-width: 1199px) {
-    min-width: 45%;
-  }
+//   @media screen and (max-width: 1199px) {
+//     min-width: 45%;
+//   }
 
-  @media screen and (max-width: 1023px) {
-    width: 70%;
-  }
+//   @media screen and (max-width: 1023px) {
+//     width: 70%;
+//   }
 
-  @media screen and (max-width: 799px) {
-    width: 100%;
-  }
-`;
+//   @media screen and (max-width: 799px) {
+//     width: 100%;
+//   }
+// `;
 
-const ResponsiveTwitchVideo = styled.div`
-  padding-top: 56.25%;
-  position: relative;
-  height: 0;
-  margin-bottom: 16px;
-  iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-`;
+// const ResponsiveTwitchVideo = styled.div`
+//   padding-top: 56.25%;
+//   position: relative;
+//   height: 0;
+//   margin-bottom: 16px;
+//   iframe {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//   }
+// `;
 
 const FollowSection = styled.div`
   width: 100%;
@@ -276,7 +276,7 @@ const MusicPage = ({ location }) => (
                 </SocialIcon>
               </SocialIconsContainer>
             </FollowSection>
-            <SectionHeading>
+            {/* <SectionHeading>
               <Heading2>Past Live Streams</Heading2>
             </SectionHeading>
             <RecentStreamsLayout>
@@ -314,7 +314,7 @@ const MusicPage = ({ location }) => (
                   <Heading4SC>Housekeeping - 5/7/2020</Heading4SC>
                 </CardText>
               </StreamCard>
-            </RecentStreamsLayout>
+            </RecentStreamsLayout> */}
             <SectionHeading>
               <Heading2>DJ Mixes</Heading2>
             </SectionHeading>
