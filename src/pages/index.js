@@ -7,8 +7,21 @@ import { PageBackground } from '../components/Library/Layout';
 import juantonLogo from '../images/juanton_logo_cropped.png';
 import EnterSiteCTA from '../components/Home/EnterSiteCTA';
 import HomePage from '../components/Home/HomePage';
+import PageMeta from '../components/Library/PageMeta';
 
 import '../styles/global.css';
+
+const meta = {
+  meta_title:
+    'Juanton Music | Tech House Music Production Tips, Tricks & Tutorials',
+  meta_description:
+    'Juanton is a tech house music producer from San Francisco, sharing tips, tricks and tutorials. You can find Juan streaming live tech house production on Twitch every Monday at 6pm PST.',
+  canonical: 'https://juantonmusic.com',
+  og_site_name: 'Juanton Music',
+  og_type: 'website',
+  twitter_site: '@juantonmusic',
+  twitter_creator: '@juantonmusic'
+};
 
 const LayoutSC = styled.div`
   position: relative;
@@ -90,7 +103,24 @@ const HomeSplashPage = () => {
   return (
     <>
       <PageBackground className="homebg">
-        {/* <SEO title="Juanton Music | Home" /> */}
+        <PageMeta meta={meta}>
+          <meta
+            property="og:image"
+            content="https://juantonmusic.com/images/juanton-music-eye-heart-nye-dillon-francis.png"
+          />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta
+            property="og:image:alt"
+            content="Juanton playing a silent disco DJ set at Eye Heart NYE 2020 with Dillon Francis"
+          />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:image"
+            content="https://juantonmusic.com/images/juanton-music-eye-heart-nye-dillon-francis.png"
+          />
+        </PageMeta>
         {section === 'splash' ? (
           <LayoutSC>
             <CenteredContent>

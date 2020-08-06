@@ -17,7 +17,21 @@ import {
   faFacebook
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PageMeta from '../components/Library/PageMeta';
 import '../styles/global.css';
+
+const meta = {
+  meta_title: 'Shows | Juanton Music',
+  meta_description:
+    'Find out when Juanton will be performing his next Tech House DJ set. Juanton often plays in venues around San Francisco and Oakland, CA.',
+  canonical: 'https://juantonmusic.com/shows',
+  og_site_name: 'Juanton Music',
+  og_title: 'Upcoming Juanton Shows',
+  og_type: 'website',
+  twitter_title: 'Upcoming Juanton DJ Sets',
+  twitter_site: '@juantonmusic',
+  twitter_creator: '@juantonmusic'
+};
 
 // const ShowsListing = styled.div`
 //   width: 100%;
@@ -119,6 +133,7 @@ const SocialFontAwesome = styled(FontAwesomeIcon)``;
 
 const ShowsPage = ({ location }) => (
   <>
+    <PageMeta meta={meta} />
     <PageBackground className="pagebg">
       <FullHeightLayout>
         <PageWrapper currentPath={location.pathname}>

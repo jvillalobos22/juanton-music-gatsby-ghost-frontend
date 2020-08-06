@@ -13,6 +13,24 @@ import VideoPlayer from '../components/Library/VideoPlayer';
 
 import '../styles/global.css';
 import { AnchorOutline } from '../components/Library/Buttons';
+import PageMeta from '../components/Library/PageMeta';
+
+const meta = {
+  meta_title: 'Media | Juanton Music',
+  meta_description:
+    'Learn about Juanton and where he has been in this interview with Voice of Electronic Music',
+  canonical: 'https://juantonmusic.com/media',
+  og_title: 'Juanton in the Media',
+  og_description:
+    'Learn about Juanton and where he has been in this interview with Voice of Electronic Music',
+  og_site_name: 'Juanton Music',
+  og_type: 'website',
+  twitter_title: 'Juanton in the Media',
+  twitter_description:
+    'Learn about Juanton and where he has been in this interview with Voice of Electronic Music',
+  twitter_site: '@juantonmusic',
+  twitter_creator: '@juantonmusic'
+};
 
 const VideoPlayerLayout = styled.div`
   width: 100%;
@@ -36,6 +54,7 @@ const ButtonContainer = styled.div`
 const MediaPage = ({ location }) => (
   <>
     <PageBackground className="pagebg">
+      <PageMeta meta={meta} />
       <FullHeightLayout>
         <PageWrapper currentPath={location.pathname}>
           <SectionLayout>

@@ -18,7 +18,21 @@ import MailchimpSignupForm from '../components/Library/MailchimpSignupForm';
 import PageWrapper from '../components/PageWrapper';
 import { Heading2, Body1 } from '../components/Library/Typography';
 import { juantonLinks } from '../helpers/links';
+import PageMeta from '../components/Library/PageMeta';
 import '../styles/global.css';
+
+const meta = {
+  meta_title: 'Twitch Thank You | Juanton Music',
+  meta_description:
+    'Thanks for watching the Juanton Tech House Production livestream on Twitch. Sign up for the newsletter below to receive production tips, tricks and tutorials right in your inbox.',
+  canonical: 'https://juantonmusic.com/twitch',
+  og_site_name: 'Juanton Music',
+  og_title: 'Sign up for the Juanton Newsletter',
+  og_type: 'website',
+  twitter_title: 'Sign up for the Juanton Newsletter',
+  twitter_site: '@juantonmusic',
+  twitter_creator: '@juantonmusic'
+};
 
 const Layout = styled.div`
   width: 100%;
@@ -70,6 +84,7 @@ const SocialFontAwesome = styled(FontAwesomeIcon)``;
 
 const TwitchNewsletterSignup = ({ location }) => (
   <>
+    <PageMeta meta={meta} />
     <PageBackground className="pagebg">
       <FullHeightLayout>
         <PageWrapper currentPath={location.pathname}>

@@ -20,8 +20,21 @@ import PageWrapper from '../components/PageWrapper';
 import { Heading2, Heading3, Heading4 } from '../components/Library/Typography';
 import { ResponsiveSoundcloudPlayer } from '../components/Library/ResponsiveSoundcloudPlayer';
 import { juantonLinks } from '../helpers/links';
-
+import PageMeta from '../components/Library/PageMeta';
 import '../styles/global.css';
+
+const meta = {
+  meta_title: 'Music | Juanton Music',
+  meta_description:
+    'Listen to the latest Juanton music out on Spotify, Beatport, SoundCloud and YouTube. My 808 released in April 2020 with the dance music label OKNF Records.',
+  canonical: 'https://juantonmusic.com/music',
+  og_site_name: 'Juanton Music',
+  og_title: 'Listen to the Latest Music from Juanton',
+  og_type: 'website',
+  twitter_title: 'Listen to the Latest Music from Juanton',
+  twitter_site: '@juantonmusic',
+  twitter_creator: '@juantonmusic'
+};
 
 const ResponsiveSoundcloudPlayerSC = styled(ResponsiveSoundcloudPlayer)`
   && {
@@ -194,6 +207,7 @@ const SocialIcon = styled.a`
 
 const MusicPage = ({ location }) => (
   <>
+    <PageMeta meta={meta} />
     <PageBackground className="pagebg">
       <FullHeightLayout>
         <PageWrapper currentPath={location.pathname}>
